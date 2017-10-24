@@ -1,0 +1,62 @@
+The title, including a rough storyboard.
+	The Hunted
+		The Hunted takes place entirely in the confines of the most elite hunting resorts in the world. 
+		As the Hunter, you arrive to test your hunting skills in an arena, made to favor the game, 
+		with only a bow and some arrows. Your goal is to bag the deer in the arena before the time runs 
+		out… or they kill you. As the Deer, you are all does that have been raised in captivity to be 
+		more lethal than the average deer. The goal for the Deer is to evade or kill the hunter.
+		
+A complete version of the game's story line.
+
+Any background information that will be provided to the user (perhaps to set mood, describe the historical 
+or fictional context)
+
+The game's selling points (e.g. graphics, action, plot). I.e., what would make a game producer want to pay 
+you to develop this game?
+
+A description of the primary modes of game play. E.g., your game might be primarily first-person, but have 
+abstract modes when player is solving puzzle.
+
+For each mode provide:
+	A list of player resources, including how they are created and consumed. E.g., "bullets", "energy pills", etc.
+	
+	The user interface. Provide a drawing/diagram.
+	
+	Whether there is positive and/or negative feedback. I.e., what actions are good or bad for the player.
+	
+	How you will balance the game play. What values can you tweak to make the game harder or easier? You should 
+	identify these up front so you can play-balance as the game's release date nears.
+	
+	Storyboards demonstrating the mode.
+	
+A transition diagram (like a finite state automata diagram) for how the player moves between the primary game modes.
+
+A description of all entities that will be in the game and how they behave.
+	Can the player manipulate them? Do they act as obstacles? What is their purpose? (Are they related to a goal, 
+	as an enemy, as scenery?)
+	
+A description of all interactions in the game (e.g. which objects collide, which cause damage to the player)
+
+An inventory of artwork and models and how they will be used. If you are using sprites, indicate how many, and what 
+they are to represent. E.g, "a sprite-set to represent a running zombie", "background for the night mode", "model 
+of the climbing wall", "model of a cow", etc.
+
+A statement of how the work will be divided among the group members. Some roles and assignments might be obvious, 
+such as, "Matt will provide all the artwork listed in Section 3.4. Sue will provide the model for climbing walls." 
+Other assignments can be tricky: "Matt will provide the scripts that allow the player to climb walls." In this 
+last case, Matt might have to coordinate closely with Sue.
+
+A timeline for your future work on the project. Look at the work statement. Consider what each team member is to 
+accomplish, and decide how to decompose those accomplishments into doable, measurable subtasks. Make your best 
+guess as to how long each will take to accomplish. Note which subtasks are prerequisites to other subtasks. Now 
+try to arrange those subtasks into a horizontal sequence for each team member. Imagine vertical lines through the 
+sequences to serve as your benchmark deadlines.
+	Create a Gannt chart for the schedule. Each row of the chart should be a measurable task, annoted with names 
+	of the responsible team members. The columns indicate dates.
+	
+	Make a timeline: each row should be a date, at least one per week. For each date, list what tasks should be 
+	completed by then, and who is primariliy responsible for meeting that benchmark.
+	
+	Example: "October 1: Matt will provide initial code for player movement. Player animation can be minimal. 
+	Sue will provide models for walls and livestock. Tom will provide a terrain populated by trees and bushes."
+
