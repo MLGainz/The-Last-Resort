@@ -1,18 +1,69 @@
 The title, including a rough storyboard.
 	The Hunted
-		The Hunted takes place entirely in the confines of the most elite hunting resorts in the world. 
-		As the Hunter, you arrive to test your hunting skills in an arena, made to favor the game, 
-		with only a bow and some arrows. Your goal is to bag the deer in the arena before the time runs 
-		out… or they kill you. As the Deer, you are all does that have been raised in captivity to be 
-		more lethal than the average deer. The goal for the Deer is to evade or kill the hunter.
+		The Hunted takes place entirely in the confines of the most elite hunting resorts in the world,
+		The Lodge. As the Hunter, you arrive to test your hunting skills in an arena, made to favor the 
+		game, with only a bow and some arrows. Your goal is to bag the deer in the arena before the time 
+		runs out… or they kill you. As the Deer, you are all does that have been raised in captivity to 
+		be more lethal than the average deer to provide a greater challenge for the hunters who dare test
+		their skills in your arena. The goal for the Deer is to evade the Hunter until the time is up
+		or to kill the Hunter.
 		
 A complete version of the game's story line.
+	The Hunted takes place within the walls of the mysterious hunting resort known only as The Lodge.
+	The Lodge is said to be located somewhere in the upper peninsula of Michigan, but no one knows for
+	sure. It is also rumored that there are other resorts located throughout the world and the only way 
+	be invited to them is to complete each resort's predecessor but no one has ever completed the first
+	one. Within the confines of The Lodge is a diverse environment, known as The Playing Field, that has
+	been strategically built to test the hunter's skills. The Playing Fields includes a lush forest, 
+	flowing river, towering cliffs, unstable boulders and more. The Lodge has a small but strict set of 
+	rules on what's allowed as weaponry in The Playing Field: You may only use a bow, arrows, knives,
+	and small traps. Safety is not guaranteed in The Lodge. In fact most hunters who have received the 
+	infamous invite are never seen again. The survivors can only tell of the harrowing experience that
+	awaited them inside The Playing Field and that in the end it was them that escaped. What could these
+	terrifying beasts be? They are simply does, as in female deer. That's right, deer have killed some
+	of the most elite hunters in the world. Deer have the survivors cowering at the thought of entering
+	the woods ever again. These deer were bred for perfection and then genetically enhanced to exceed 
+	the limitations mother nature so cruely placed on them. The Lodge currently only uses does as the
+	game in The Playing Field to make the hunt more interesting, and quite frankly, longer lived for 
+	the hunter, but within the bowels of The Lodge's labs and breeding facilities who knows what they
+	might contain. 
+	
+	The hunter known as The Hunter is among the most skilled in the world. His skill, along with his 
+	acclaimed hunts of the most ferocious beasts on Earth, have earned him an invite to hunt at The 
+	Lodge. The Hunter does not know what awaits him in The Playing Field, but he is ready.
+
+	The Deer at The Lodge are very special. They are bred to be the best, genetically enhanced to be 
+	even better, and trained to be a formidable force. The Deer became too strong over time and to avoid 
+	making kabobs out of the hunters, the males had to be held back from The Playing Field. Now the does 
+	are the only ones hunted at The Lodge… until someone proves it’s time to release the rest.
+
 
 Any background information that will be provided to the user (perhaps to set mood, describe the historical 
 or fictional context)
+	The Hunted takes place entirely in the confines of the most elite hunting resorts in the world. As the 
+	Hunter, you arrive to test your hunting skills in an arena, made to favor the game, with only a bow and 
+	some arrows. Your goal is to bag the deer in the arena before the time runs out… or they kill you. As 
+	the Deer, you are all does that have been raised in captivity to be more lethal than the average deer 
+	to provide a greater challenge for the hunters who dare test their skills in your arena. The goal for 
+	the Deer is to evade the Hunter until the time is up or to kill the Hunter.
 
 The game's selling points (e.g. graphics, action, plot). I.e., what would make a game producer want to pay 
 you to develop this game?
+	The Graphics:
+		The graphics are a big selling point of this game. In the end, the goal is to create an environment 
+		that is as breathtaking as it is terrifying. We want the players to marvel at the beauty of the 
+		scenery at times and be too scared to move at others.
+	The Action:
+		The action of The Hunted is the biggest selling point. We want fast-paced, on the edge of your seat 
+		action that makes players come back for more. The map will be designed in such a way to provide good 
+		flow and a constant feeling of being “in the action.” The last thing we want is for the player to be 
+		bored at any point while playing The Hunted.
+	The Re-Playability 
+		Finally, we have the re-playability of the game. The Hunted is set up to be a game that friends come 
+		back and play over and over again because it was so much fun beating each other to a bloody mess. We 
+		also want to provide significantly different experiences between playing as the Deer and the Hunter 
+		so that there’s always more to discover and do. 
+
 
 A description of the primary modes of game play. E.g., your game might be primarily first-person, but have 
 abstract modes when player is solving puzzle.
