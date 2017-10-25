@@ -1,4 +1,4 @@
-The title, including a rough storyboard.
+﻿The title, including a rough storyboard.
 	The Hunted
 		The Hunted takes place entirely in the confines of the most elite hunting resorts in the world,
 		The Lodge. As the Hunter, you arrive to test your hunting skills in an arena, made to favor the 
@@ -97,6 +97,22 @@ such as, "Matt will provide all the artwork listed in Section 3.4. Sue will prov
 Other assignments can be tricky: "Matt will provide the scripts that allow the player to climb walls." In this 
 last case, Matt might have to coordinate closely with Sue.
 
+	The work will be divided up as evebly as possible between team members. Sean will 
+	find, link and install any assets into the directory that may be useful for the game.
+	This should be done by 11/13, when the map areas should be prett much complete with all
+	boulders, water features and obstacles. Devin will work on the player models for the
+	Hunter and for the Deer, the rough models should be done by 11/16. Player movement 
+	should also be included with the rough player models. The completed player models, 
+	including full player movement should be completed no later than 12/2. The weapon 
+	models and should be sourced/designed by 11/20 with the ability to implement them
+	into the game for testing with the player models. The HUD will be designed and worked 
+	on by everyone, with the parts broken up to each person. This should be semi-completed
+	by the time the beta is due. By 12/2, the player movement and designs should be
+	fully working, (running, walking, falling down, standin up,...). By 12/7, the weapons
+	should be fully working and implemented, (reloading, shooting,...). By 12/14, the due
+	date, all of the bugs should be worked out and there shouldnt be any glaring issues
+	with the game. It should be working and playable, and look half-decent.
+
 A timeline for your future work on the project. Look at the work statement. Consider what each team member is to 
 accomplish, and decide how to decompose those accomplishments into doable, measurable subtasks. Make your best 
 guess as to how long each will take to accomplish. Note which subtasks are prerequisites to other subtasks. Now 
@@ -110,4 +126,7 @@ sequences to serve as your benchmark deadlines.
 	
 	Example: "October 1: Matt will provide initial code for player movement. Player animation can be minimal. 
 	Sue will provide models for walls and livestock. Tom will provide a terrain populated by trees and bushes."
+
+
+Link to the gantt chart : https://drive.google.com/open?id=0BwWdkWsZy0g1WjM5Tmt6aVhWUkU
 
