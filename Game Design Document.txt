@@ -49,6 +49,21 @@ or fictional context)
 
 The game's selling points (e.g. graphics, action, plot). I.e., what would make a game producer want to pay 
 you to develop this game?
+	The Graphics:
+		The graphics are a big selling point of this game. In the end, the goal is to create an environment 
+		that is as breathtaking as it is terrifying. We want the players to marvel at the beauty of the 
+		scenery at times and be too scared to move at others.
+	The Action:
+		The action of The Hunted is the biggest selling point. We want fast-paced, on the edge of your seat 
+		action that makes players come back for more. The map will be designed in such a way to provide good 
+		flow and a constant feeling of being “in the action.” The last thing we want is for the player to be 
+		bored at any point while playing The Hunted.
+	The Re-Playability 
+		Finally, we have the re-playability of the game. The Hunted is set up to be a game that friends come 
+		back and play over and over again because it was so much fun beating each other to a bloody mess. We 
+		also want to provide significantly different experiences between playing as the Deer and the Hunter 
+		so that there’s always more to discover and do. 
+
 
 A description of the primary modes of game play. E.g., your game might be primarily first-person, but have 
 abstract modes when player is solving puzzle.
