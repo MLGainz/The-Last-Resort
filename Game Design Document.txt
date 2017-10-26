@@ -145,6 +145,5 @@ sequences to serve as your benchmark deadlines.
 	Example: "October 1: Matt will provide initial code for player movement. Player animation can be minimal. 
 	Sue will provide models for walls and livestock. Tom will provide a terrain populated by trees and bushes."
 
-
-Link to the gantt chart : https://drive.google.com/open?id=0BwWdkWsZy0g1WjM5Tmt6aVhWUkU
+	Link to the gantt chart : https://drive.google.com/open?id=0BwWdkWsZy0g1WjM5Tmt6aVhWUkU
 
