@@ -139,8 +139,27 @@ A description of all entities that will be in the game and how they behave.
 	
 
 An inventory of artwork and models and how they will be used. If you are using sprites, indicate how many, and what 
-they are to represent. E.g, "a sprite-set to represent a running zombie", "background for the night mode", "model 
-of the climbing wall", "model of a cow", etc.
+ they are to represent. E.g, "a sprite-set to represent a running zombie", "background for the night mode", "model 
+ of the climbing wall", "model of a cow", etc.
++	Hunter Model – For the Hunter character
++	Doe Model – For the Deer characters
++	Bow Model – The Hunter’s main weapon
++	Arrow Model – The bow’s ammo
++	Knife Model – The Hunter’s secondary weapon
++	Multiple Tree Models – To populate the forest
++	Multiple Bush Models – To populate the forest
++	Multiple Boulder Models – To create cliffs and to populate the forest
++	Grass Model – For tall grass
++	Bridge Model – For bridges
++	Wall Model – For the walls surrounding the play area
++	Elevator Model – To lower the hunter into the play area
++	Water Texture – For rivers/ponds
++	Lava Texture – For lava
++	Grassy Ground Texture – For the forest ground
++	Rocky Ground Texture – For the cliffs/non-grassy surfaces
++	Night Sky Texture – For the sky
++	Blood Texture – For blood
++	Main Menu Background – For the main menu
 
 A statement of how the work will be divided among the group members. Some roles and assignments might be obvious, 
 such as, "Matt will provide all the artwork listed in Section 3.4. Sue will provide the model for climbing walls." 
