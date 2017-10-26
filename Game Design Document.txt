@@ -64,51 +64,83 @@ you to develop this game?
 		also want to provide significantly different experiences between playing as the Deer and the Hunter 
 		so that there’s always more to discover and do. 
 
+
 A description of the primary modes of game play. E.g., your game might be primarily first-person, but have 
 abstract modes when player is solving puzzle.
-
-For each mode provide:
-	A list of player resources, including how they are created and consumed. E.g., "bullets", "energy pills", etc.
+	There are two modes of gameplay. One where the player controls the hunter character, and one where the player controls
+	one of the deer characters.
 	
-	The user interface. Provide a drawing/diagram.
-	
-	Whether there is positive and/or negative feedback. I.e., what actions are good or bad for the player.
-	
-	How you will balance the game play. What values can you tweak to make the game harder or easier? You should 
-	identify these up front so you can play-balance as the game's release date nears.
-	
-	Storyboards demonstrating the mode.
+	Hunter mode:
+		The hunter character is equipped with a bow, arrows, and a knife. These are given at the start of the game, and cannot
+		be lost or broken. As of now, we are planning on simply having unlimited arrows for the hunter, but we may implement 
+		an ammo count and extra ammo pickups if time commits. In addition, the hunter will be able to make use of the limited
+		number of health pickups, which will be generated and placed around the map at the start of the game.
+		
+		The hunter UI will be primarily a third-person, over the shoulder camera view, with a health bar in the lower
+		right corner. The hunter will also have the option to 'aim down sights' with the bow, shifting the camera to 
+		first-person and slowing movement. If ammo counting is implemeted, the number of arrows the hunter has will also
+		be in the lower right corner, next to the health bar.
+		
+		Good actions:
+			Picking up health and ammo.
+			Damaging the deer.
+		
+		Bad actions:
+			Being damaged by the deer.
+			Falling from height.
+			Being damaged by environmental hazards.
+		
+	Deer mode:
+		The deer characters have no equipment. They are also able to use the health pickups on the map.
+		
+		The deer UI will be similar to the hunter, in that it is a third person view, with a health bar in the lower right
+		corner. The deer will always be third-person. Also, instead of an ammo count, next to the health bar the deer will
+		have a cooldown timer for its special charge attack.
+		
+		Good actions:
+			Picking up health.
+			Damaging the hunter.
+		
+		Bad actions:
+			Being damaged by the hunter.
+			Falling from height.
+			Being damaged by environmental hazards.
+			
+	Balance:
+		Values to tweak:
+			Health of hunter
+			Health of deer
+			Damage of arrow and knife attacks
+			Damage of charge attack
+			Damage of enviroment and falling
+			Amount of health gained from pickups
 	
 A transition diagram (like a finite state automata diagram) for how the player moves between the primary game modes.
-
+	As the game loads, one player will be randomly selected to play as the hunter The rest will play as the deer.
+	
 A description of all entities that will be in the game and how they behave.
 	Can the player manipulate them? Do they act as obstacles? What is their purpose? (Are they related to a goal, 
 	as an enemy, as scenery?)
+	Enemies:
+		Depending on which character is being played, the deer or the hunter are the enemies. They can damage and
+		be damaged by the player.
+	Pickups:
+		Health pickup can be acquired from the map by the player, healing them a set amount of health points
+		If implemented, the hunter will have ammunition pickups that give them more arrows
+	Environment(active):
+		Moving water will slow player if entered
+		Cliffs over a certain height will be damaging to the player if they fall off
+		Boulders and/or logs can be pushed over cliffs. If they land on an enemy, they will damage it
+		Bushes can be entered by any character. If the character remains still in the bush, it is much more difficult
+		to detect that character
+	Environment(scenery):
+		Trees can not be directly interacted with, but can be used by a player for cover, or to break line of sight 
+		Rocks and boulders can be used in the same manner.
 	
-A description of all interactions in the game (e.g. which objects collide, which cause damage to the player)
 
 An inventory of artwork and models and how they will be used. If you are using sprites, indicate how many, and what 
 they are to represent. E.g, "a sprite-set to represent a running zombie", "background for the night mode", "model 
 of the climbing wall", "model of a cow", etc.
-	Hunter Model – For the Hunter character
-	Doe Model – For the Deer characters
-	Bow Model – The Hunter’s main weapon
-	Arrow Model – The bow’s ammo
-	Knife Model – The Hunter’s secondary weapon
-	Multiple Tree Models – To populate the forest
-	Multiple Bush Models – To populate the forest
-	Multiple Boulder Models – To create cliffs and to populate the forest
-	Grass Model – For tall grass
-	Bridge Model – For bridges
-	Wall Model – For the walls surrounding the play area
-	Elevator Model – To lower the hunter into the play area
-	Water Texture – For rivers/ponds
-	Lava Texture – For lava
-	Grassy Ground Texture – For the forest ground
-	Rocky Ground Texture – For the cliffs/non-grassy surfaces
-	Night Sky Texture – For the sky
-	Blood Texture – For blood
-	Main Menu Background – For the main menu
 
 A statement of how the work will be divided among the group members. Some roles and assignments might be obvious, 
 such as, "Matt will provide all the artwork listed in Section 3.4. Sue will provide the model for climbing walls." 
@@ -145,5 +177,6 @@ sequences to serve as your benchmark deadlines.
 	Example: "October 1: Matt will provide initial code for player movement. Player animation can be minimal. 
 	Sue will provide models for walls and livestock. Tom will provide a terrain populated by trees and bushes."
 
-	Link to the gantt chart : https://drive.google.com/open?id=0BwWdkWsZy0g1WjM5Tmt6aVhWUkU
+
+Link to the gantt chart : https://drive.google.com/open?id=0BwWdkWsZy0g1WjM5Tmt6aVhWUkU
 
