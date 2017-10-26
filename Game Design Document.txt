@@ -8,6 +8,13 @@
 		their skills in your arena. The goal for the Deer is to evade the Hunter until the time is up
 		or to kill the Hunter.
 		
+		Right now, our primary goal for The Hunted is to create a fun, multiplayer based game to play 
+		between four or less people. One player is chosen to be The Hunter while the remaining players are 
+		The Deer. The Hunter must try to kill all of The Deer before the time runs out or The Hunter is 
+		killed. The Deer are trying to survive until time runs out or trying to kill The Hunter. The 
+		environment will be dangerous and interactable to make the game more strategy based but still 
+		maintain the feeling of a fast-paced shooter.
+		
 A complete version of the game's story line.
 	The Hunted takes place within the walls of the mysterious hunting resort known only as The Lodge.
 	The Lodge is said to be located somewhere in the upper peninsula of Michigan, but no one knows for
