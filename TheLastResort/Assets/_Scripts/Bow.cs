@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Slingshot : MonoBehaviour {
-	static public Slingshot S;
+public class Bow : MonoBehaviour {
+	static public Bow S;
 	
 	//fields set in the Unity Inspector pane
 	public GameObject prefabProjectile;
@@ -17,7 +17,7 @@ public class Slingshot : MonoBehaviour {
 	public bool aimingMode;
 	
 	void Update(){
-		//If Slingshot is not in aimingMode, don't run this code
+		//If Bow is not in aimingMode, don't run this code
 		if(!aimingMode) return;
 		//Get the current mouse poition in 2D screen coordinates
 		Vector3 mousePos2D = Input.mousePosition;
@@ -26,7 +26,7 @@ public class Slingshot : MonoBehaviour {
 		Vector3 mousePos3D = Camera.main.ScreenToWorldPoint(mousePos2D);
 		//Find the delta from the launchPos to the mousePos3D
 		Vector3 mouseDelta = mousePos3D-launchPos;
-		//Limit mouseDelta to the radius of the Slingshot SphereCollider
+		//Limit mouseDelta to the radius of the Bow SphereCollider
 		float maxMagnitude = this.GetComponent<SphereCollider>().radius;
 		if(mouseDelta.magnitude > maxMagnitude){
 			mouseDelta.Normalize();
@@ -48,7 +48,7 @@ public class Slingshot : MonoBehaviour {
 	}
 	
 	void Awake(){
-		//Set the Slingshot singleton ScreenToWorldPoint
+		//Set the Bow singleton ScreenToWorldPoint
 		S = this;
 		
 		Transform launchPointTrans = transform.Find("LaunchPoint");
@@ -58,17 +58,17 @@ public class Slingshot : MonoBehaviour {
 	}
 
 	void OnMouseEnter(){
-		//print("Slingshot:OnMouseEnter()");
+		//print("Bow:OnMouseEnter()");
 		launchPoint.SetActive(true);
 	}
 	
 	void OnMouseExit(){
-		//print("Slingshot:OnMouseExit()");
+		//print("Bow:OnMouseExit()");
 		launchPoint.SetActive(false);
 	}
 	
 	void OnMouseDown(){
-		//The player has pressed the mouse button while over Slingshot
+		//The player has pressed the mouse button while over Bow
 		aimingMode = true;
 		//Instantiate a Projectile
 		projectile = Instantiate(prefabProjectile) as GameObject;
