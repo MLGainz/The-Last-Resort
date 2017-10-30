@@ -19,6 +19,7 @@ MonoBehaviour:
     x: 0
     y: 30
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1920
     height: 947
   m_MinSize: {x: 711, y: 492}
@@ -33,6 +34,14 @@ MonoBehaviour:
   vertical: 0
   controlID: 121
 >>>>>>> 93cebdfe95c0c5b5c7072df436acda344dcb15ca
+=======
+    width: 1920
+    height: 947
+  m_MinSize: {x: 713, y: 492}
+  m_MaxSize: {x: 18008, y: 14042}
+  vertical: 0
+  controlID: 4598
+>>>>>>> parent of 93cebdf... trees again
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -55,10 +64,10 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 457
-    width: 912
-    height: 345
+    x: -1920
+    y: 138
+    width: 1141
+    height: 453
   m_MaximizeOnPlay: 1
   m_Gizmos: 0
   m_Stats: 0
@@ -67,10 +76,10 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -291.55557
-    m_HBaseRangeMax: 291.55557
-    m_VBaseRangeMin: -164
-    m_VBaseRangeMax: 164
+    m_HBaseRangeMin: -387.55557
+    m_HBaseRangeMax: 387.55557
+    m_VBaseRangeMin: -218
+    m_VBaseRangeMax: 218
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -87,25 +96,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 912
-      height: 328
+      width: 1141
+      height: 436
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 456, y: 164}
+    m_Translation: {x: 570.5, y: 218}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -456
-      y: -164
-      width: 912
-      height: 328
+      x: -570.5
+      y: -218
+      width: 1141
+      height: 436
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 912, y: 345}
+  m_LastWindowPixelSize: {x: 1141, y: 453}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -128,6 +137,7 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1499
     height: 947
   m_MinSize: {x: 434, y: 492}
@@ -142,6 +152,14 @@ MonoBehaviour:
   vertical: 1
   controlID: 122
 >>>>>>> 93cebdfe95c0c5b5c7072df436acda344dcb15ca
+=======
+    width: 1499
+    height: 947
+  m_MinSize: {x: 436, y: 492}
+  m_MaxSize: {x: 14006, y: 14042}
+  vertical: 1
+  controlID: 4599
+>>>>>>> parent of 93cebdf... trees again
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -161,6 +179,7 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1499
     height: 473
   m_MinSize: {x: 304, y: 221}
@@ -175,6 +194,14 @@ MonoBehaviour:
   vertical: 0
   controlID: 97
 >>>>>>> 93cebdfe95c0c5b5c7072df436acda344dcb15ca
+=======
+    width: 1499
+    height: 473
+  m_MinSize: {x: 306, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
+  vertical: 0
+  controlID: 4600
+>>>>>>> parent of 93cebdf... trees again
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -192,6 +219,7 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1151
     height: 473
 =======
@@ -200,6 +228,12 @@ MonoBehaviour:
 >>>>>>> 93cebdfe95c0c5b5c7072df436acda344dcb15ca
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
+=======
+    width: 1151
+    height: 473
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
+>>>>>>> parent of 93cebdf... trees again
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -228,16 +262,17 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 92
-    width: 919
-    height: 344
+    x: -1920
+    y: -335
+    width: 1149
+    height: 452
   m_SceneLighting: 1
-  lastFramingTime: 18.035344197530865
+  lastFramingTime: 692.9389834820676
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
 <<<<<<< HEAD
     m_Target: {x: 76.28689, y: 49.74062, z: 5.9180617}
     speed: 2
@@ -247,6 +282,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 92.7, y: 56.6, z: -1.6}
 >>>>>>> 93cebdfe95c0c5b5c7072df436acda344dcb15ca
+=======
+    m_Target: {x: 83.38337, y: 25.80751, z: 42.188175}
+    speed: 2
+    m_Value: {x: 83.38337, y: 25.80751, z: 42.188175}
+>>>>>>> parent of 93cebdf... trees again
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -270,6 +310,7 @@ MonoBehaviour:
       m_Value: 0
   m_Rotation:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: -0.29171902, y: 0.5892465, z: -0.2407661, w: -0.7139471}
     speed: 2
     m_Value: {x: -0.291719, y: 0.5892465, z: -0.2407661, w: -0.71394706}
@@ -279,23 +320,30 @@ MonoBehaviour:
     m_Value: 28.005823
 =======
     m_Target: {x: -0.08164972, y: -0.29186627, z: 0.025015565, w: -0.95263934}
+=======
+    m_Target: {x: -0.32338047, y: 0.022707516, z: -0.007762621, w: -0.94596475}
+>>>>>>> parent of 93cebdf... trees again
     speed: 2
-    m_Value: {x: -0.08164973, y: -0.2918663, z: 0.025015566, w: -0.95263934}
+    m_Value: {x: -0.32338047, y: 0.022707516, z: -0.0077626207, w: -0.9459647}
   m_Size:
-    m_Target: 22
+    m_Target: 67.05098
     speed: 2
+<<<<<<< HEAD
     m_Value: 22
 >>>>>>> 93cebdfe95c0c5b5c7072df436acda344dcb15ca
+=======
+    m_Value: 67.05098
+>>>>>>> parent of 93cebdf... trees again
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
-  m_LastSceneViewRotation: {x: -0.08164972, y: -0.29186627, z: 0.025015565, w: -0.95263934}
+  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
   m_LastLockedObject: {fileID: 0}
-  m_ViewIsLockedToObject: 1
+  m_ViewIsLockedToObject: 0
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -336,8 +384,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 921
+    x: 1151
     y: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
     width: 348
     height: 473
@@ -347,6 +396,12 @@ MonoBehaviour:
 >>>>>>> 93cebdfe95c0c5b5c7072df436acda344dcb15ca
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
+=======
+    width: 348
+    height: 473
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
+>>>>>>> parent of 93cebdf... trees again
   m_ActualView: {fileID: 9}
   m_Panes:
   - {fileID: 9}
@@ -374,12 +429,13 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 923
-    y: 92
-    width: 274
-    height: 344
+    x: -767
+    y: -335
+    width: 344
+    height: 452
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
     m_SelectedIDs: 
     m_LastClickedID: 0
@@ -389,6 +445,11 @@ MonoBehaviour:
     m_LastClickedID: 12776
     m_ExpandedIDs: 1afcffff00000000
 >>>>>>> 93cebdfe95c0c5b5c7072df436acda344dcb15ca
+=======
+    m_SelectedIDs: d6460000
+    m_LastClickedID: 0
+    m_ExpandedIDs: ba94ffff00000000
+>>>>>>> parent of 93cebdf... trees again
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -429,6 +490,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 473
     width: 1499
     height: 474
@@ -445,6 +507,15 @@ MonoBehaviour:
   vertical: 0
   controlID: 123
 >>>>>>> 93cebdfe95c0c5b5c7072df436acda344dcb15ca
+=======
+    y: 473
+    width: 1499
+    height: 474
+  m_MinSize: {x: 436, y: 271}
+  m_MaxSize: {x: 14006, y: 10021}
+  vertical: 0
+  controlID: 4378
+>>>>>>> parent of 93cebdf... trees again
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -461,8 +532,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 914
-    height: 366
+    width: 1143
+    height: 474
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
@@ -484,8 +555,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 914
+    x: 1143
     y: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
     width: 356
     height: 474
@@ -495,6 +567,12 @@ MonoBehaviour:
 >>>>>>> 93cebdfe95c0c5b5c7072df436acda344dcb15ca
   m_MinSize: {x: 230, y: 250}
   m_MaxSize: {x: 10000, y: 10000}
+=======
+    width: 356
+    height: 474
+  m_MinSize: {x: 234, y: 271}
+  m_MaxSize: {x: 10004, y: 10021}
+>>>>>>> parent of 93cebdf... trees again
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -522,10 +600,10 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 916
-    y: 457
-    width: 281
-    height: 345
+    x: -775
+    y: 138
+    width: 352
+    height: 453
   m_SearchFilter:
     m_NameFilter: 
     m_ClassNames: []
@@ -537,22 +615,27 @@ MonoBehaviour:
     m_ScenePaths: []
     m_ShowAllHits: 0
     m_SearchArea: 0
-    m_Folders: []
+    m_Folders:
+    - Assets/_Prefabs
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\dfowl\Documents\GitHub\The-Last-Resort\TheLastResort
+  m_LastProjectPath: C:\Users\Sean\Documents\GitHub\The-Last-Resort\TheLastResort
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 32260000
     m_LastClickedID: 9778
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000a2270000da27000086280000c6280000d02900007c2a0000ac2b0000d22c0000302d0000ce2d0000202e0000422f0000ae2f00002230000032300000483300004a3300004c3300004e330000
 =======
     m_ExpandedIDs: 00000000a227000086280000c6280000d02900007c2a0000ac2b0000d22c0000302d0000ce2d0000202e0000ae2f000022300000323000009c3300009e330000a0330000a2330000
 >>>>>>> 93cebdfe95c0c5b5c7072df436acda344dcb15ca
+=======
+    m_ExpandedIDs: 0000000008490000664900007a490000fa4900003a4a0000a44a00002c4b0000484b0000824b0000944b0000fc4b0000164c0000364c00003c4c0000064e0000084e00000a4e00000c4e0000144e0000
+>>>>>>> parent of 93cebdf... trees again
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -579,6 +662,7 @@ MonoBehaviour:
   m_AssetTreeState:
     scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: 00000000a2270000da27000086280000c6280000d02900007c2a0000ac2b0000d22c0000302d0000ce2d0000202e0000422f0000ae2f00002230000032300000483300004a3300004c3300004e330000
@@ -587,6 +671,11 @@ MonoBehaviour:
     m_LastClickedID: 0
     m_ExpandedIDs: 00000000a227000086280000c6280000d02900007c2a0000ac2b0000d22c0000302d0000ce2d0000202e0000ae2f000022300000323000009c3300009e330000a0330000a2330000
 >>>>>>> 93cebdfe95c0c5b5c7072df436acda344dcb15ca
+=======
+    m_SelectedIDs: d6460000
+    m_LastClickedID: 18134
+    m_ExpandedIDs: 0000000008490000664900007a490000fa4900003a4a0000a44a00002c4b0000484b0000824b0000944b0000fc4b0000164c0000364c00003c4c0000064e0000084e00000a4e00000c4e0000144e0000
+>>>>>>> parent of 93cebdf... trees again
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -612,12 +701,17 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
 =======
     m_SelectedInstanceIDs: e8310000
     m_LastClickedInstanceID: 12776
 >>>>>>> 93cebdfe95c0c5b5c7072df436acda344dcb15ca
+=======
+    m_SelectedInstanceIDs: d6460000
+    m_LastClickedInstanceID: 18134
+>>>>>>> parent of 93cebdf... trees again
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
@@ -660,8 +754,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1199
+    x: 1499
     y: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
     width: 421
     height: 947
@@ -670,6 +765,10 @@ MonoBehaviour:
 =======
     width: 337
     height: 731
+=======
+    width: 421
+    height: 947
+>>>>>>> parent of 93cebdf... trees again
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
 >>>>>>> 93cebdfe95c0c5b5c7072df436acda344dcb15ca
@@ -701,10 +800,10 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1201
-    y: 92
-    width: 335
-    height: 710
+    x: -419
+    y: -335
+    width: 419
+    height: 926
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
