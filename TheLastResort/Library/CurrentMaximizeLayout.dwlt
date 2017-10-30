@@ -22,9 +22,10 @@ MonoBehaviour:
 <<<<<<< HEAD
     width: 1920
     height: 947
-  m_MinSize: {x: 711, y: 492}
-  m_MaxSize: {x: 18006, y: 14042}
+  m_MinSize: {x: 713, y: 492}
+  m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
+<<<<<<< HEAD
   controlID: 3644
 =======
     width: 1536
@@ -42,6 +43,9 @@ MonoBehaviour:
   vertical: 0
   controlID: 4598
 >>>>>>> parent of 93cebdf... trees again
+=======
+  controlID: 4598
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,9 +144,10 @@ MonoBehaviour:
 <<<<<<< HEAD
     width: 1499
     height: 947
-  m_MinSize: {x: 434, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+  m_MinSize: {x: 436, y: 492}
+  m_MaxSize: {x: 14006, y: 14042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 3645
 =======
     width: 1199
@@ -160,6 +165,9 @@ MonoBehaviour:
   vertical: 1
   controlID: 4599
 >>>>>>> parent of 93cebdf... trees again
+=======
+  controlID: 4599
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -182,9 +190,10 @@ MonoBehaviour:
 <<<<<<< HEAD
     width: 1499
     height: 473
-  m_MinSize: {x: 304, y: 221}
-  m_MaxSize: {x: 8004, y: 4021}
+  m_MinSize: {x: 306, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
+<<<<<<< HEAD
   controlID: 3558
 =======
     width: 1199
@@ -202,6 +211,9 @@ MonoBehaviour:
   vertical: 0
   controlID: 4600
 >>>>>>> parent of 93cebdf... trees again
+=======
+  controlID: 4600
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -222,6 +234,7 @@ MonoBehaviour:
 <<<<<<< HEAD
     width: 1151
     height: 473
+<<<<<<< HEAD
 =======
     width: 921
     height: 365
@@ -234,6 +247,10 @@ MonoBehaviour:
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
 >>>>>>> parent of 93cebdf... trees again
+=======
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -274,6 +291,7 @@ MonoBehaviour:
   m_Position:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 76.28689, y: 49.74062, z: 5.9180617}
     speed: 2
     m_Value: {x: 76.28689, y: 49.74062, z: 5.9180617}
@@ -287,6 +305,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 83.38337, y: 25.80751, z: 42.188175}
 >>>>>>> parent of 93cebdf... trees again
+=======
+    m_Target: {x: 83.38337, y: 25.80751, z: 42.188175}
+    speed: 2
+    m_Value: {x: 83.38337, y: 25.80751, z: 42.188175}
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -311,12 +334,17 @@ MonoBehaviour:
   m_Rotation:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: -0.29171902, y: 0.5892465, z: -0.2407661, w: -0.7139471}
+=======
+    m_Target: {x: -0.32338047, y: 0.022707516, z: -0.007762621, w: -0.94596475}
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
     speed: 2
-    m_Value: {x: -0.291719, y: 0.5892465, z: -0.2407661, w: -0.71394706}
+    m_Value: {x: -0.32338047, y: 0.022707516, z: -0.0077626207, w: -0.9459647}
   m_Size:
-    m_Target: 28.005823
+    m_Target: 67.05098
     speed: 2
+<<<<<<< HEAD
     m_Value: 28.005823
 =======
     m_Target: {x: -0.08164972, y: -0.29186627, z: 0.025015565, w: -0.95263934}
@@ -334,6 +362,9 @@ MonoBehaviour:
 =======
     m_Value: 67.05098
 >>>>>>> parent of 93cebdf... trees again
+=======
+    m_Value: 67.05098
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -390,6 +421,7 @@ MonoBehaviour:
 <<<<<<< HEAD
     width: 348
     height: 473
+<<<<<<< HEAD
 =======
     width: 278
     height: 365
@@ -402,6 +434,10 @@ MonoBehaviour:
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
 >>>>>>> parent of 93cebdf... trees again
+=======
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
   m_ActualView: {fileID: 9}
   m_Panes:
   - {fileID: 9}
@@ -437,6 +473,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: 86fbffff1afcffff00000000
@@ -450,6 +487,11 @@ MonoBehaviour:
     m_LastClickedID: 0
     m_ExpandedIDs: ba94ffff00000000
 >>>>>>> parent of 93cebdf... trees again
+=======
+    m_SelectedIDs: d6460000
+    m_LastClickedID: 0
+    m_ExpandedIDs: ba94ffff00000000
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -494,9 +536,10 @@ MonoBehaviour:
     y: 473
     width: 1499
     height: 474
-  m_MinSize: {x: 434, y: 271}
-  m_MaxSize: {x: 14004, y: 10021}
+  m_MinSize: {x: 436, y: 271}
+  m_MaxSize: {x: 14006, y: 10021}
   vertical: 0
+<<<<<<< HEAD
   controlID: 3646
 =======
     y: 365
@@ -516,6 +559,9 @@ MonoBehaviour:
   vertical: 0
   controlID: 4378
 >>>>>>> parent of 93cebdf... trees again
+=======
+  controlID: 4378
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -561,6 +607,7 @@ MonoBehaviour:
 <<<<<<< HEAD
     width: 356
     height: 474
+<<<<<<< HEAD
 =======
     width: 285
     height: 366
@@ -573,6 +620,10 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 271}
   m_MaxSize: {x: 10004, y: 10021}
 >>>>>>> parent of 93cebdf... trees again
+=======
+  m_MinSize: {x: 234, y: 271}
+  m_MaxSize: {x: 10004, y: 10021}
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -629,6 +680,7 @@ MonoBehaviour:
     m_LastClickedID: 9778
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000a2270000da27000086280000c6280000d02900007c2a0000ac2b0000d22c0000302d0000ce2d0000202e0000422f0000ae2f00002230000032300000483300004a3300004c3300004e330000
 =======
     m_ExpandedIDs: 00000000a227000086280000c6280000d02900007c2a0000ac2b0000d22c0000302d0000ce2d0000202e0000ae2f000022300000323000009c3300009e330000a0330000a2330000
@@ -636,6 +688,9 @@ MonoBehaviour:
 =======
     m_ExpandedIDs: 0000000008490000664900007a490000fa4900003a4a0000a44a00002c4b0000484b0000824b0000944b0000fc4b0000164c0000364c00003c4c0000064e0000084e00000a4e00000c4e0000144e0000
 >>>>>>> parent of 93cebdf... trees again
+=======
+    m_ExpandedIDs: 0000000008490000664900007a490000fa4900003a4a0000a44a00002c4b0000484b0000824b0000944b0000fc4b0000164c0000364c00003c4c0000064e0000084e00000a4e00000c4e0000144e0000
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -663,6 +718,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: 00000000a2270000da27000086280000c6280000d02900007c2a0000ac2b0000d22c0000302d0000ce2d0000202e0000422f0000ae2f00002230000032300000483300004a3300004c3300004e330000
@@ -676,6 +732,11 @@ MonoBehaviour:
     m_LastClickedID: 18134
     m_ExpandedIDs: 0000000008490000664900007a490000fa4900003a4a0000a44a00002c4b0000484b0000824b0000944b0000fc4b0000164c0000364c00003c4c0000064e0000084e00000a4e00000c4e0000144e0000
 >>>>>>> parent of 93cebdf... trees again
+=======
+    m_SelectedIDs: d6460000
+    m_LastClickedID: 18134
+    m_ExpandedIDs: 0000000008490000664900007a490000fa4900003a4a0000a44a00002c4b0000484b0000824b0000944b0000fc4b0000164c0000364c00003c4c0000064e0000084e00000a4e00000c4e0000144e0000
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -702,6 +763,7 @@ MonoBehaviour:
   m_ListAreaState:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
 =======
@@ -712,6 +774,10 @@ MonoBehaviour:
     m_SelectedInstanceIDs: d6460000
     m_LastClickedInstanceID: 18134
 >>>>>>> parent of 93cebdf... trees again
+=======
+    m_SelectedInstanceIDs: d6460000
+    m_LastClickedInstanceID: 18134
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
@@ -760,6 +826,7 @@ MonoBehaviour:
 <<<<<<< HEAD
     width: 421
     height: 947
+<<<<<<< HEAD
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
 =======
@@ -772,6 +839,10 @@ MonoBehaviour:
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
 >>>>>>> 93cebdfe95c0c5b5c7072df436acda344dcb15ca
+=======
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
