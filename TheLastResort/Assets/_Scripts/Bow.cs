@@ -17,46 +17,43 @@ public class Bow : MonoBehaviour {
 	public float timeHeld = 0f;
 	
 	void Update(){
-		/**Get the current mouse poition in 2D screen coordinates
-		Vector3 mousePos2D = Input.mousePosition;
-		//Convert the mouse position to 3D world coordinates
-		mousePos2D.z = -Camera.main.transform.position.z;
-		Vector3 mousePos3D = Camera.main.ScreenToWorldPoint(mousePos2D);
-		//Find the delta from the launchPos to the mousePos3D
-		Vector3 mouseDelta = mousePos3D-launchPos;
-		//Limit mouseDelta to the radius of the Bow SphereCollider
-		float maxMagnitude = this.GetComponent<SphereCollider>().radius;
-		if(mouseDelta.magnitude > maxMagnitude){
-			mouseDelta.Normalize();
-			mouseDelta *= maxMagnitude;
-		}
-		//Move the projectile to this new position
-		Vector3 projPos = launchPos + mouseDelta;
-		projectile.transform.position = projPos;
-		*/
 		if(Input.GetMouseButtonUp(0)){
-			print("Bow:MouseButtonUp");
-			timeHeld = 0;
-		}
+ +			launchPos = launchPointTrans.position;
+ +			launchRot = launchPointTrans.rotation;
+ +			projectile.GetComponent<Rigidbody>().isKinematic = false;
+ +			print(launchRot.x);
+ +			print(launchRot.y);
+ +			print(launchRot.z);
+ +			
+ +			vel.x = power * timeHeld;
+ 
+ +			projectile.GetComponent<Rigidbody>().velocity = vel;
+ +
+  			timeHeld = 0;
+  		}
 		
 		if(Input.GetMouseButtonDown(0)){
-			projectile = Instantiate(prefabProjectile) as GameObject;
-			projectile.transform.position = launchPos;
-		}
-		
-		if(Input.GetMouseButton(0)){
-			if(timeHeld < 6)
-				timeHeld += 0.1f;
-			print(timeHeld);
-		}
+  			projectile = Instantiate(prefabProjectile) as GameObject;
+  			projectile.transform.position = launchPos;
+ +			projectile.transform.rotation = launchRot;
+ +			projectile.GetComponent<Rigidbody>().isKinematic = true;
+  		}
+  		
+  		if(Input.GetMouseButton(0)){
+ +			if(timeHeld < 4)
+ +				timeHeld += 0.5f;
+ +			
+ +			projectile.transform.position = launchPos;
+  			print(timeHeld);
+  		}
 	}
 	
 	void Awake(){
-		//Set the Bow singleton ScreenToWorldPoint
 		S = this;
 		
-		Transform launchPointTrans = transform.Find("Middle");
-		launchPoint = launchPointTrans.gameObject;
-		launchPos = launchPointTrans.position;
+		launchPointTrans = transform.Find("Middle");
+  		launchPoint = launchPointTrans.gameObject;
+  		launchPos = launchPointTrans.position;
+ +		launchRot = launchPointTrans.rotation;
 	}
 }
