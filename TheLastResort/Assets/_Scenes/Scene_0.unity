@@ -1128,6 +1128,7 @@ Prefab:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 1
 =======
       value: 0.9816104
@@ -1135,6 +1136,9 @@ Prefab:
 =======
       value: -0.60876137
 >>>>>>> parent of 93cebdf... trees again
+=======
+      value: -0.60876137
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
 =======
       value: -0.60876137
 >>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
@@ -1148,6 +1152,7 @@ Prefab:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 0
 =======
       value: 0.19089559
@@ -1158,11 +1163,15 @@ Prefab:
 =======
       value: 0.7933534
 >>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
+=======
+      value: 0.7933534
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
       objectReference: {fileID: 0}
     - target: {fileID: 4786802439390466, guid: 1837269bd4be50e419db2bcb05b2879c, type: 2}
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1199,6 +1208,15 @@ Prefab:
 =======
       value: -75
 >>>>>>> parent of 93cebdf... trees again
+=======
+    - target: {fileID: 1526010320438426, guid: 1837269bd4be50e419db2bcb05b2879c, type: 2}
+      propertyPath: m_Name
+      value: Bow
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786802439390466, guid: 1837269bd4be50e419db2bcb05b2879c, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -75
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
 =======
     - target: {fileID: 1526010320438426, guid: 1837269bd4be50e419db2bcb05b2879c, type: 2}
       propertyPath: m_Name
