@@ -14,12 +14,10 @@ public class Bow : MonoBehaviour {
 	public GameObject launchPoint;
 	public Vector3 launchPos;
 	public GameObject projectile;
-	public bool aimingMode;
+	public float timeHeld = 0f;
 	
 	void Update(){
-		//If Bow is not in aimingMode, don't run this code
-		if(!aimingMode) return;
-		//Get the current mouse poition in 2D screen coordinates
+		/**Get the current mouse poition in 2D screen coordinates
 		Vector3 mousePos2D = Input.mousePosition;
 		//Convert the mouse position to 3D world coordinates
 		mousePos2D.z = -Camera.main.transform.position.z;
@@ -35,15 +33,21 @@ public class Bow : MonoBehaviour {
 		//Move the projectile to this new position
 		Vector3 projPos = launchPos + mouseDelta;
 		projectile.transform.position = projPos;
-		
+		*/
 		if(Input.GetMouseButtonUp(0)){
-			//The mouse has been released
-			aimingMode = false;
-			projectile.GetComponent<Rigidbody>().isKinematic = false;
-			projectile.GetComponent<Rigidbody>().velocity = -mouseDelta * velocityMult;
-			//FollowCam.S.poi = projectile;
-			projectile = null;
-			//MissionDemolition.ShotFired();
+			print("Bow:MouseButtonUp");
+			timeHeld = 0;
+		}
+		
+		if(Input.GetMouseButtonDown(0)){
+			projectile = Instantiate(prefabProjectile) as GameObject;
+			projectile.transform.position = launchPos;
+		}
+		
+		if(Input.GetMouseButton(0)){
+			if(timeHeld < 6)
+				timeHeld += 0.1f;
+			print(timeHeld);
 		}
 	}
 	
@@ -51,30 +55,8 @@ public class Bow : MonoBehaviour {
 		//Set the Bow singleton ScreenToWorldPoint
 		S = this;
 		
-		Transform launchPointTrans = transform.Find("LaunchPoint");
+		Transform launchPointTrans = transform.Find("Middle");
 		launchPoint = launchPointTrans.gameObject;
-		launchPoint.SetActive(false);
 		launchPos = launchPointTrans.position;
-	}
-
-	void OnMouseEnter(){
-		//print("Bow:OnMouseEnter()");
-		launchPoint.SetActive(true);
-	}
-	
-	void OnMouseExit(){
-		//print("Bow:OnMouseExit()");
-		launchPoint.SetActive(false);
-	}
-	
-	void OnMouseDown(){
-		//The player has pressed the mouse button while over Bow
-		aimingMode = true;
-		//Instantiate a Projectile
-		projectile = Instantiate(prefabProjectile) as GameObject;
-		//Start it at the launchPoint
-		projectile.transform.position = launchPos;
-		//Set it to isKinematic for now
-		projectile.GetComponent<Rigidbody>().isKinematic = true;
 	}
 }
