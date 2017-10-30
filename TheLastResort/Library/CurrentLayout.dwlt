@@ -20,8 +20,13 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootView: {fileID: 6}
   m_MinSize: {x: 950, y: 300}
+=======
+  m_RootView: {fileID: 2}
+  m_MinSize: {x: 950, y: 542}
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
 =======
   m_RootView: {fileID: 2}
   m_MinSize: {x: 950, y: 542}
@@ -142,6 +147,9 @@ MonoBehaviour:
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
   controlID: 4709
+<<<<<<< HEAD
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
+=======
 >>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
 --- !u!114 &6
 MonoBehaviour:
@@ -174,6 +182,9 @@ MonoBehaviour:
   m_MaxSize: {x: 14006, y: 14042}
   vertical: 1
   controlID: 4673
+<<<<<<< HEAD
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
+=======
 >>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
 --- !u!114 &7
 MonoBehaviour:
@@ -204,6 +215,9 @@ MonoBehaviour:
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
   controlID: 4847
+<<<<<<< HEAD
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
+=======
 >>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
 --- !u!114 &8
 MonoBehaviour:
@@ -308,6 +322,9 @@ MonoBehaviour:
   m_MaxSize: {x: 14006, y: 10021}
   vertical: 0
   controlID: 4674
+<<<<<<< HEAD
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
+=======
 >>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
 --- !u!114 &11
 MonoBehaviour:
@@ -663,6 +680,9 @@ MonoBehaviour:
     m_SelectedIDs: 32260000
     m_LastClickedID: 9778
     m_ExpandedIDs: 0000000008490000664900007a490000fa4900003a4a0000a44a00002c4b0000484b0000824b0000944b0000fc4b0000164c0000364c00003c4c0000064e0000084e00000a4e00000c4e0000144e0000
+<<<<<<< HEAD
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
+=======
 >>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -692,7 +712,11 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000a2270000da27000086280000c62800007a290000d02900007c2a0000ac2b0000d22c0000302d0000ce2d0000202e0000422f0000ae2f000022300000323000002c3100002e3100003031000032310000
+=======
+    m_ExpandedIDs: 0000000008490000664900007a490000fa4900003a4a0000a44a00002c4b0000484b0000824b0000944b0000fc4b0000164c0000364c00003c4c0000064e0000084e00000a4e00000c4e0000144e0000
+>>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
 =======
     m_ExpandedIDs: 0000000008490000664900007a490000fa4900003a4a0000a44a00002c4b0000484b0000824b0000944b0000fc4b0000164c0000364c00003c4c0000064e0000084e00000a4e00000c4e0000144e0000
 >>>>>>> parent of 03f1191... Bow shoots now! Just not in the right direction depending on the angle.
