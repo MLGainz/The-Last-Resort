@@ -7,43 +7,47 @@ public class Bow : MonoBehaviour {
 	
 	//fields set in the Unity Inspector pane
 	public GameObject prefabProjectile;
-	public float velocityMult = 4f;
+	public float power = 4f;
 	public bool _____________;
 	
 	//fields set dynamically
 	public GameObject launchPoint;
 	public Vector3 launchPos;
+	public Quaternion launchRot;
 	public GameObject projectile;
 	public float timeHeld = 0f;
+	Transform launchPointTrans;
+	public Vector3 vel;
 	
 	void Update(){
 		if(Input.GetMouseButtonUp(0)){
- +			launchPos = launchPointTrans.position;
- +			launchRot = launchPointTrans.rotation;
- +			projectile.GetComponent<Rigidbody>().isKinematic = false;
- +			print(launchRot.x);
- +			print(launchRot.y);
- +			print(launchRot.z);
- +			
- +			vel.x = power * timeHeld;
+ 			launchPos = launchPointTrans.position;
+ 			launchRot = launchPointTrans.rotation;
+ 			projectile.GetComponent<Rigidbody>().isKinematic = false;
+ 			print(launchRot.x);
+ 			print(launchRot.y);
+ 			print(launchRot.z);
+ 			
+ 			vel.x = power * timeHeld;
  
- +			projectile.GetComponent<Rigidbody>().velocity = vel;
- +
+ 			projectile.GetComponent<Rigidbody>().velocity = vel;
+ 
   			timeHeld = 0;
   		}
 		
 		if(Input.GetMouseButtonDown(0)){
   			projectile = Instantiate(prefabProjectile) as GameObject;
   			projectile.transform.position = launchPos;
- +			projectile.transform.rotation = launchRot;
- +			projectile.GetComponent<Rigidbody>().isKinematic = true;
+ 			projectile.transform.rotation = launchRot;
+ 			projectile.GetComponent<Rigidbody>().isKinematic = true;
   		}
   		
   		if(Input.GetMouseButton(0)){
- +			if(timeHeld < 4)
- +				timeHeld += 0.5f;
- +			
- +			projectile.transform.position = launchPos;
+ 			if(timeHeld < 4)
+ 				timeHeld += 0.5f;
+			
+ 			
+			projectile.transform.position = launchPos;
   			print(timeHeld);
   		}
 	}
@@ -54,6 +58,6 @@ public class Bow : MonoBehaviour {
 		launchPointTrans = transform.Find("Middle");
   		launchPoint = launchPointTrans.gameObject;
   		launchPos = launchPointTrans.position;
- +		launchRot = launchPointTrans.rotation;
+ 		launchRot = launchPointTrans.rotation;
 	}
 }
