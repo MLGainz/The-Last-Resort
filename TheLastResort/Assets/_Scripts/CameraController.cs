@@ -23,7 +23,7 @@ public class CameraController : MonoBehaviour {
 
     void LateUpdate()
     {	
-        transform.position = player.transform.position + offset;
+        transform.position = player.transform.forward + offset*-1;
 		yaw += speedH * Input.GetAxis("Mouse X");
         pitch -= speedV * Input.GetAxis("Mouse Y");
 		

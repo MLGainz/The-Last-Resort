@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bow : MonoBehaviour {
-	static public Bow S;
-	
 	//fields set in the Unity Inspector pane
 	public GameObject prefabProjectile;
 	public float power = 4f;
 	public bool _____________;
 	
 	//fields set dynamically
-	public GameObject launchPoint;
 	public Vector3 launchPos;
 	public Quaternion launchRot;
 	public GameObject projectile;
@@ -20,18 +17,13 @@ public class Bow : MonoBehaviour {
 	public Vector3 vel;
 	
 	void Update(){
+		launchPointTrans = transform.Find("Middle");
+		launchPos = launchPointTrans.position;
+ 		launchRot = launchPointTrans.rotation;
+			
 		if(Input.GetMouseButtonUp(0)){
- 			launchPos = launchPointTrans.position;
- 			launchRot = launchPointTrans.rotation;
  			projectile.GetComponent<Rigidbody>().isKinematic = false;
- 			print(launchRot.x);
- 			print(launchRot.y);
- 			print(launchRot.z);
- 			
- 			vel.x = power * timeHeld;
- 
- 			projectile.GetComponent<Rigidbody>().velocity = vel;
- 
+ 			projectile.GetComponent<Rigidbody>().velocity = projectile.transform.forward * power * timeHeld;
   			timeHeld = 0;
   		}
 		
@@ -46,18 +38,9 @@ public class Bow : MonoBehaviour {
  			if(timeHeld < 4)
  				timeHeld += 0.5f;
 			
- 			
 			projectile.transform.position = launchPos;
+			projectile.transform.rotation = launchRot;
   			print(timeHeld);
   		}
-	}
-	
-	void Awake(){
-		S = this;
-		
-		launchPointTrans = transform.Find("Middle");
-  		launchPoint = launchPointTrans.gameObject;
-  		launchPos = launchPointTrans.position;
- 		launchRot = launchPointTrans.rotation;
 	}
 }
