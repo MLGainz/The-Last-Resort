@@ -5,34 +5,43 @@ using UnityEngine;
 public class CameraController : MonoBehaviour {
 
     public GameObject player;
+	public GameObject focus;
+	public GameObject bow;
+	public float rotateSpeed = 5;
 	
-	public float speedH = 2.0f;
-    public float speedV = 2.0f;
-
-    private float yaw = 0.0f;
-    private float pitch = 0.0f;
-	private float oldpitch;
-	
-    private Vector3 offset;
-	private Vector3 lookPos;
+	private float yaw = 0.0f;
+	private float pitch = 0.0f;
+	private float oldPitch;
+    private Vector3 camOffset;
+	private Vector3 bowOffset;
 
     void Start()
     {
-        offset = transform.position - player.transform.position;
+        camOffset = transform.position - player.transform.position;
+		bowOffset = player.transform.position - bow.transform.position;
     }
 
     void LateUpdate()
     {	
-        transform.position = player.transform.forward + offset*-1;
-		yaw += speedH * Input.GetAxis("Mouse X");
-        pitch -= speedV * Input.GetAxis("Mouse Y");
+		float horiz = Input.GetAxis("Mouse X") * rotateSpeed;
+		float vert = Input.GetAxis("Mouse Y") * rotateSpeed;
+		player.transform.Rotate(0, horiz, 0);
+		
+		float angle = player.transform.eulerAngles.y;
+		pitch -= rotateSpeed * Input.GetAxis("Mouse Y");
 		
 		if(pitch < 90 && pitch > -90){
-			transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
-			player.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
-			oldpitch = pitch;
+			bow.transform.eulerAngles = new Vector3(pitch, angle, 0.0f);
+			transform.eulerAngles = new Vector3(pitch, angle, 0.0f);
+			oldPitch = pitch;
 		}else{
-			transform.eulerAngles = new Vector3(oldpitch, yaw, 0.0f);
+			bow.transform.eulerAngles = new Vector3(oldPitch, angle, 0.0f);
+			transform.eulerAngles = new Vector3(oldPitch, angle, 0.0f);
 		}
+		
+		Quaternion rotation = Quaternion.Euler(0, angle, 0);
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y+3, player.transform.position.z) + (rotation*camOffset);
+		bow.transform.position = player.transform.position + (rotation*bowOffset);
+		//transform.LookAt(focus.transform);
     }
 }
