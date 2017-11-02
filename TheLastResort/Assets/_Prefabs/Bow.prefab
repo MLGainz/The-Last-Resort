@@ -272,7 +272,7 @@ MonoBehaviour:
   launchRot: {x: 0, y: 0, z: 0, w: 0}
   projectile: {fileID: 0}
   timeHeld: 0
-  vel: {x: 0, y: 0, z: 0}
+  isDrawn: 0
 --- !u!136 &136046032331615704
 CapsuleCollider:
   m_ObjectHideFlags: 1

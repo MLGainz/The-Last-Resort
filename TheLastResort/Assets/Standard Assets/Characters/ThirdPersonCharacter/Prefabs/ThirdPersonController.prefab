@@ -2498,12 +2498,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MovingTurnSpeed: 360
   m_StationaryTurnSpeed: 180
-  m_JumpPower: 8
+  m_JumpPower: 10
   m_GravityMultiplier: 6
   m_RunCycleLegOffset: 0.2
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.3
+  theBow: {fileID: 0}
 --- !u!136 &13615390
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bow : MonoBehaviour {
+public class BowScript : MonoBehaviour {
 	//fields set in the Unity Inspector pane
 	public GameObject prefabProjectile;
 	public float power = 4f;
