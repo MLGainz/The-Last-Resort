@@ -14,7 +14,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		[SerializeField] float m_RunCycleLegOffset = 0.2f; //specific to the character in sample assets, will need to be modified to work with others
 		[SerializeField] float m_MoveSpeedMultiplier = 1f;
 		[SerializeField] float m_AnimSpeedMultiplier = 1f;
-		[SerializeField] float m_GroundCheckDistance = 0.1f;
+		[SerializeField] float m_GroundCheckDistance = 3.0f;
 
 		Rigidbody m_Rigidbody;
 		Animator m_Animator;
@@ -190,6 +190,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// this allows us to modify the positional speed before it's applied.
 			if (m_IsGrounded && Time.deltaTime > 0)
 			{
+				/**
+				bool isDrawn = GameObject.Find("Bow").GetComponent<Bow>().isDrawn;
+
+				if(isDrawn){
+					m_MoveSpeedMultiplier = 0.5f;
+				}else{
+					m_MoveSpeedMultiplier = 1.0f;
+				}
+				*/
+				
 				Vector3 v = (m_Animator.deltaPosition * m_MoveSpeedMultiplier) / Time.deltaTime;
 
 				// we preserve the existing y part of the current velocity.

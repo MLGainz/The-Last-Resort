@@ -42,6 +42,5 @@ public class CameraController : MonoBehaviour {
 		Quaternion rotation = Quaternion.Euler(0, angle, 0);
         transform.position = new Vector3(player.transform.position.x, player.transform.position.y+3, player.transform.position.z) + (rotation*camOffset);
 		bow.transform.position = player.transform.position + (rotation*bowOffset);
-		//transform.LookAt(focus.transform);
     }
 }
