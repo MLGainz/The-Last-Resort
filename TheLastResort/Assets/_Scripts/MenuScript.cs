@@ -35,15 +35,7 @@ public class MenuScript : MonoBehaviour {
 		
 	}
 	
-    public void startDeerOnline()
-    {
-    //Start deer online
-    }
-
-    public void startHunterOnline()
-    {
-    //Start deer Offline
-    }
+   
 
     public void OnlinePress()
     {
@@ -91,12 +83,22 @@ public class MenuScript : MonoBehaviour {
 
     public void startDeerOffline()
     {
-        SceneManager.LoadScene("DeerScene");
+        SceneManager.LoadScene("Scene_Deer_Offline-------------Not Working Yet");
     }
 
     public void startHunterOffline()
     {
-        SceneManager.LoadScene("HunterScene");
+        SceneManager.LoadScene("Scene_Hunter_Offline");
+    }
+
+    public void startHunterOnline()
+    {
+        SceneManager.LoadScene("Scene_Hunter_Online-------------Not Working Yet");
+    }
+
+    public void startDeerOnline()
+    {
+        SceneManager.LoadScene("Scene_Deer_Online-------------Not Working Yet");
     }
 
     public void ExitGame()
