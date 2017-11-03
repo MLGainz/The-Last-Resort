@@ -88,7 +88,7 @@ public class MenuScript : MonoBehaviour {
 
     public void startHunterOffline()
     {
-        SceneManager.LoadScene("Scene_Hunter_Offline");
+        SceneManager.LoadScene("Scene_0");
     }
 
     public void startHunterOnline()
