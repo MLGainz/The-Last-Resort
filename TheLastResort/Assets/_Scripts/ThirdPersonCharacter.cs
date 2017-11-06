@@ -14,7 +14,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		[SerializeField] float m_RunCycleLegOffset = 0.2f; //specific to the character in sample assets, will need to be modified to work with others
 		[SerializeField] float m_MoveSpeedMultiplier = 1f;
 		[SerializeField] float m_AnimSpeedMultiplier = 1f;
-		[SerializeField] float m_GroundCheckDistance = 5.0f;
+		[SerializeField] float m_GroundCheckDistance = 1f;
 
 		Rigidbody m_Rigidbody;
 		Animator m_Animator;
@@ -53,10 +53,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			move = transform.InverseTransformDirection(move);
 			CheckGroundStatus();
 			move = Vector3.ProjectOnPlane(move, m_GroundNormal);
-			m_TurnAmount = Mathf.Atan2(move.x, move.z);
+			//m_TurnAmount = Mathf.Atan2(move.x, move.z);
 			m_ForwardAmount = move.z;
 
-			ApplyExtraTurnRotation();
+			//ApplyExtraTurnRotation();
 
 			// control and velocity handling is different when grounded and airborne:
 			if (m_IsGrounded)
@@ -119,7 +119,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		{
 			// update the animator parameters
 			m_Animator.SetFloat("Forward", m_ForwardAmount, 0.1f, Time.deltaTime);
-			m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
+			//m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
 			m_Animator.SetBool("Crouch", m_Crouching);
 			m_Animator.SetBool("OnGround", m_IsGrounded);
 			if (!m_IsGrounded)
@@ -190,13 +190,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// this allows us to modify the positional speed before it's applied.
 			if (m_IsGrounded && Time.deltaTime > 0)
 			{
-				bool isDrawn = GameObject.Find("Bow").GetComponent<BowScript>().isDrawn;
-
-				if(isDrawn){
-					m_MoveSpeedMultiplier = 0.333f;
-				}else{
-					m_MoveSpeedMultiplier = 1.0f;
-				}
 				
 				Vector3 v = (m_Animator.deltaPosition * m_MoveSpeedMultiplier) / Time.deltaTime;
 
@@ -216,7 +209,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 #endif
 			// 0.1f is a small offset to start the ray from inside the character
 			// it is also good to note that the transform position in the sample assets is at the base of the character
-			if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, m_GroundCheckDistance))
+			if (Physics.Raycast(transform.position + (Vector3.up * 0.01f), Vector3.down, out hitInfo, m_GroundCheckDistance))
 			{
 				m_GroundNormal = hitInfo.normal;
 				m_IsGrounded = true;
