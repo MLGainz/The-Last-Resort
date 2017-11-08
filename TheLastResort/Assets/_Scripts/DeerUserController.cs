@@ -63,7 +63,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 
 			// walk speed multiplier
-			if (Input.GetMouseButton(0)) m_Move *= 1.5f;
+			if (Input.GetKey(KeyCode.LeftShift)) m_Move *= 1.5f;
 
 			// pass all parameters to the character control script
 			m_Character.Move(m_Move, m_Jump);

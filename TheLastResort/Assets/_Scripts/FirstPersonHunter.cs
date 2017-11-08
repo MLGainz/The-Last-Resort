@@ -28,11 +28,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
-
+		float health;
 
 		void Start()
 		{
 			Cursor.visible = false;
+			health = 100;
 
 			m_Animator = GetComponent<Animator>();
 			m_Rigidbody = GetComponent<Rigidbody>();
@@ -44,6 +45,17 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			m_OrigGroundCheckDistance = m_GroundCheckDistance;
 		}
 
+		void Update(){
+			if (health <= 0)
+				this.gameObject.SetActive(false);
+		}
+
+		void OnCollisionEnter(Collision col){
+			if (col.gameObject.name == "Deer") {
+				health -= col.relativeVelocity.magnitude/2;
+				print (health);
+			}
+		}
 
 		public void Move(Vector3 move, bool crouch, bool jump)
 		{
