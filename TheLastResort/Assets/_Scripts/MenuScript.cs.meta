@@ -1,10 +1,21 @@
 fileFormatVersion: 2
 guid: cd941028f64384348b5ca3afe4374a3c
-timeCreated: 1509627133
+timeCreated: 1510154445
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - quitMenu: {instanceID: 0}
+  - OfflineMenu: {instanceID: 0}
+  - OnlineMenu: {instanceID: 0}
+  - startHunterText: {instanceID: 0}
+  - startDeerText: {instanceID: 0}
+  - exitText: {instanceID: 0}
+  - startOnlineText: {instanceID: 0}
+  - startOfflineText: {instanceID: 0}
+  - GoBackText: {instanceID: 0}
+  - hunter: {fileID: 1485329850910348, guid: 12c8d49e5eee3a24b8cc8105bd881838, type: 2}
+  - deer: {fileID: 1421637923452796, guid: 5160e94d2781a1d47a1a5bd5c2392880, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

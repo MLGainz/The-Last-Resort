@@ -15,6 +15,9 @@ public class MenuScript : MonoBehaviour {
     public Button startOnlineText;
     public Button startOfflineText;
     public Button GoBackText;
+    public GameObject hunter;
+    public GameObject deer;
+    public GameObject MenuStuff;
 
 	// Use this for initialization
 	void Start () {
@@ -84,26 +87,39 @@ public class MenuScript : MonoBehaviour {
     public void startDeerOffline()
     {
         print("Start as Deer offline");
-        
-        SceneManager.LoadScene("Scene_0");
+
+        MenuStuff.SetActive(false);
+        GameObject go = (GameObject)Instantiate(deer);
+
+        //add AI stuff here for AI hunter
     }
 
     public void startHunterOffline()
     {
         print("Start as Hunter offline");
-        SceneManager.LoadScene("Scene_0");
+        MenuStuff.SetActive(false);
+        GameObject go = (GameObject)Instantiate(hunter);
+
+        //add AI stuff here for AI deer
+
     }
 
     public void startHunterOnline()
     {
         print("Start as Hunter online");
-        SceneManager.LoadScene("Scene_0");
+        MenuStuff.SetActive(false);
+        GameObject go = (GameObject)Instantiate(hunter);
+
+        //add online stuff here
     }
 
     public void startDeerOnline()
     {
         print("Start as Deer online");
-        SceneManager.LoadScene("Scene_0");
+        MenuStuff.SetActive(false);
+        GameObject go = (GameObject)Instantiate(deer);
+
+        //add online stuff here
     }
 
     public void ExitGame()
