@@ -83,22 +83,27 @@ public class MenuScript : MonoBehaviour {
 
     public void startDeerOffline()
     {
-        SceneManager.LoadScene("Scene_Deer_Offline-------------Not Working Yet");
+        print("Start as Deer offline");
+        
+        SceneManager.LoadScene("Scene_0");
     }
 
     public void startHunterOffline()
     {
+        print("Start as Hunter offline");
         SceneManager.LoadScene("Scene_0");
     }
 
     public void startHunterOnline()
     {
-        SceneManager.LoadScene("Scene_Hunter_Online-------------Not Working Yet");
+        print("Start as Hunter online");
+        SceneManager.LoadScene("Scene_0");
     }
 
     public void startDeerOnline()
     {
-        SceneManager.LoadScene("Scene_Deer_Online-------------Not Working Yet");
+        print("Start as Deer online");
+        SceneManager.LoadScene("Scene_0");
     }
 
     public void ExitGame()
