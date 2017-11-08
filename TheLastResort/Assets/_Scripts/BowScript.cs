@@ -37,8 +37,8 @@ public class BowScript : MonoBehaviour {
   		}
   		
   		if(Input.GetMouseButton(0)){
- 			if(timeHeld < 4)
- 				timeHeld += 0.5f;
+ 			if(timeHeld < 6)
+ 				timeHeld += 0.25f;
 			
 			projectile.transform.position = launchPos;
 			projectile.transform.rotation = launchRot;

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33030002403919404}
   - component: {fileID: 65421016814844730}
   - component: {fileID: 23443395794596348}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 33973102159903670}
   - component: {fileID: 65096137513173908}
   - component: {fileID: 23740570011900298}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BackRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 33592480910697778}
   - component: {fileID: 65699375499083800}
   - component: {fileID: 23099345614018246}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BackLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 54579905569609984}
   - component: {fileID: 114437801656371666}
   - component: {fileID: 114204236510081934}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: DeerBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 33224831023633254}
   - component: {fileID: 65381227521865324}
   - component: {fileID: 23508698920611952}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4695963572861906}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 33098216422424298}
   - component: {fileID: 65847416960094722}
   - component: {fileID: 23354737921841546}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 33481859538020294}
   - component: {fileID: 65163486363693870}
   - component: {fileID: 23251622849681930}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 33886553424311086}
   - component: {fileID: 65880454792978836}
   - component: {fileID: 23670161184179134}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 33358163399948770}
   - component: {fileID: 65827636403618706}
   - component: {fileID: 23654761016373876}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,8 +259,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1025030256779816}
   m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 2, z: -1.5}
-  m_LocalScale: {x: 0.5, y: 1, z: 0.25}
+  m_LocalPosition: {x: 0, y: 2.25, z: -1.5}
+  m_LocalScale: {x: 0.25, y: 0.5, z: 0.25}
   m_Children: []
   m_Father: {fileID: 4673822785369426}
   m_RootOrder: 4
@@ -388,7 +388,7 @@ Transform:
   m_GameObject: {fileID: 1899082668235404}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 2.75, z: 1.25}
-  m_LocalScale: {x: 0.5, y: 1, z: 0.5}
+  m_LocalScale: {x: 0.25, y: 1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4673822785369426}
   m_RootOrder: 1
@@ -756,8 +756,8 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1183346797833872}
   serializedVersion: 2
-  m_Mass: 3
-  m_Drag: 0
+  m_Mass: 1
+  m_Drag: 0.5
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -866,7 +866,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1824211331386328}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!92 &92165831161441008
 Behaviour:
   m_ObjectHideFlags: 1
@@ -884,7 +884,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b235179bd2a63d1468dd430670338c55, type: 3}
   m_Controller: {fileID: 9100000, guid: e2cf68ff4b1ffda45a77f7307dd789b9, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -918,12 +918,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MovingTurnSpeed: 180
   m_StationaryTurnSpeed: 90
-  m_JumpPower: 12
-  m_GravityMultiplier: 8
+  m_JumpPower: 20
+  m_GravityMultiplier: 4
   m_RunCycleLegOffset: 0.2
   m_MoveSpeedMultiplier: 3
   m_AnimSpeedMultiplier: 3
-  m_GroundCheckDistance: 2
+  m_GroundCheckDistance: 3.5
 --- !u!114 &114437801656371666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -951,7 +951,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.6
-  m_Height: 0.3
-  m_Direction: 1
+  m_Radius: 0.7
+  m_Height: 3
+  m_Direction: 2
   m_Center: {x: 0, y: 2.25, z: 0}

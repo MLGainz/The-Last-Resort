@@ -28,11 +28,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
-
+		float health;
 
 		void Start()
 		{
 			Cursor.visible = false;
+			health = 100;
 
 			m_Animator = GetComponent<Animator>();
 			m_Rigidbody = GetComponent<Rigidbody>();
@@ -44,6 +45,19 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			m_OrigGroundCheckDistance = m_GroundCheckDistance;
 		}
 
+		void Update(){
+			if (health <= 0)
+				this.gameObject.SetActive(false);
+		}
+
+		void OnCollisionEnter(Collision col){
+			if (col.gameObject.name == "Arrow(Clone)") {
+				Destroy (col.gameObject);
+				health -= col.relativeVelocity.magnitude/4;
+				print (health);
+			}
+		}
+
 
 		public void Move(Vector3 move, bool jump)
 		{
@@ -51,7 +65,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// convert the world relative moveInput vector into a local-relative
 			// turn amount and forward amount required to head in the desired
 			// direction.
-			//if (move.magnitude > 2f) move.Normalize();
+			if (move.magnitude > 2f) move.Normalize();
 			move = transform.InverseTransformDirection(move);
 			CheckGroundStatus();
 			move = Vector3.ProjectOnPlane(move, m_GroundNormal);
