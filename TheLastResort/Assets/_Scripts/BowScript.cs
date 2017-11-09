@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class BowScript : MonoBehaviour {
 	//fields set in the Unity Inspector pane
@@ -17,6 +18,9 @@ public class BowScript : MonoBehaviour {
 	Transform launchPointTrans;
 	
 	void LateUpdate(){
+		if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
+			return;
+		
 		launchPointTrans = transform.Find("Middle");
 		launchPos = launchPointTrans.position;
  		launchRot = launchPointTrans.rotation;

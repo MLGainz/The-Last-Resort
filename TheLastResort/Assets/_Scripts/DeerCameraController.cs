@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class DeerCameraController : MonoBehaviour {
 
@@ -20,6 +21,9 @@ public class DeerCameraController : MonoBehaviour {
 
     void LateUpdate()
     {	
+		if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
+			return;
+		
 		float horiz = Input.GetAxis("Mouse X") * rotateSpeed;
 		player.transform.Rotate(0, horiz, 0);
 

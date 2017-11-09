@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class HunterCameraController : MonoBehaviour {
 
@@ -21,11 +22,13 @@ public class HunterCameraController : MonoBehaviour {
         camOffset = transform.position - focus.transform.position;
 		bowOffset = transform.position - bow.transform.position;
 		origBowOffset = bowOffset;
-		//camOffset = new Vector3(1,1,1);
     }
 
     void LateUpdate()
     {	
+		if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
+			return;
+		
 		float horiz = Input.GetAxis("Mouse X") * rotateSpeed;
 		player.transform.Rotate(0, horiz, 0);
 
@@ -37,23 +40,6 @@ public class HunterCameraController : MonoBehaviour {
 		if(pitch < 75 && pitch > -75){
 			bow.transform.eulerAngles = new Vector3(pitch, bowAngle, 0.0f);
 			transform.eulerAngles = new Vector3(pitch, camAngle, 0.0f);
-			/**
-			if (pitch > 0 && pitch > oldPitch) {
-				bowOffset.z -= pitch * 0.001f;
-				print ("1");
-			} else if (pitch > 0 && pitch < oldPitch) {
-				bowOffset.z += pitch * 0.001f;
-				print ("2");
-			} else if (pitch < 0 && pitch > oldPitch) {
-				bowOffset.z -= pitch * 0.001f;
-				print ("3");
-			} else if (pitch < 0 && pitch < oldPitch) {
-				bowOffset.z += pitch * 0.001f;
-				print ("4");
-			} else if (pitch == 0) {
-				bowOffset.z = origBowOffset.z;
-			}
-			*/
 
 			oldPitch = pitch;
 			bowY = -pitch * 0.02f;
