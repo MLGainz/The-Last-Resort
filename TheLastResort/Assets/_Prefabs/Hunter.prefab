@@ -2944,7 +2944,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabProjectile: {fileID: 1534048356839002, guid: fca6ace3a8d77c2458b356880b27d774,
     type: 2}
-  power: 10
+  power: 12
   _____________: 1
   launchPos: {x: 0, y: 0, z: 0}
   launchRot: {x: 0, y: 0, z: 0, w: 0}
