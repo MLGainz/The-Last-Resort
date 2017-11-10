@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1280
     height: 637
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 9629
+  controlID: 1429
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 342}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 9606
+  controlID: 1430
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 9528
+  controlID: 1399
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -228,8 +228,8 @@ MonoBehaviour:
     y: 0
     width: 234
     height: 264
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -490,9 +490,9 @@ MonoBehaviour:
     height: 243
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 64280000
+    m_SelectedIDs: cc900000
     m_LastClickedID: 0
-    m_ExpandedIDs: bc2afaff8c2bfaff382dfaffce90faff9e91faff5493faffc8d7faff98d8faff4adafaffd82dfbffa82efbff6430fbff6476fbff3477fbffe078fbffc496fbff9497fbff5099fbff56c1fbff26c2fbffd2c3fbff8e39ffffb83cffff6656ffff3657ffffe258ffff18fcffff00000000
+    m_ExpandedIDs: 4eacffff1cadffffd6aeffff1afcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -553,7 +553,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/_Prefabs
+    - Assets/_Scripts
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -564,7 +564,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 32260000
     m_LastClickedID: 9778
-    m_ExpandedIDs: 00000000e4270000202800004c2800006428000098280000d4280000de280000f8280000262900000e2a0000362a0000442a0000e22a0000f82a0000d62b0000dc2b0000382c0000162d00005e2d0000622d0000842d0000a62d0000c42d0000342e0000422e0000582e0000ae2e00001c2f0000e22f00004e3000005a3000009e300000ce300000de300000de380000e0380000e2380000e4380000e6380000e8380000ea380000ec380000ee380000
+    m_ExpandedIDs: 00000000ac270000dc270000ee270000fc2700001c28000042280000462800007a28000010290000302900003a290000ae290000bc2900003e2a0000442a0000762a0000fe2a0000282b0000422b00006e2b0000c82b00005a2c0000ce2c0000162d00001c2d0000482d0000622d00006c2d0000783500007a3500007c3500007e35000080350000823500008435000086350000883500008a3500008c3500008e350000903500009235000094350000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -589,24 +589,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 152}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e4270000202800004c2800006428000098280000d4280000de280000f8280000262900000e2a0000362a0000442a0000e22a0000f82a0000d62b0000dc2b0000382c0000162d00005e2d0000622d0000842d0000a62d0000c42d0000342e0000422e0000582e0000ae2e00001c2f0000e22f00004e3000005a3000009e300000ce300000de300000de380000e0380000e2380000e4380000e6380000e8380000ea380000ec380000ee380000
+    m_ExpandedIDs: 00000000ac270000dc270000ee270000fc2700001c28000042280000462800007a28000010290000302900003a290000ae290000bc2900003e2a0000442a0000762a0000fe2a0000282b0000422b00006e2b0000c82b00005a2c0000ce2c0000162d00001c2d0000482d0000622d00006c2d0000783500007a3500007c3500007e35000080350000823500008435000086350000883500008a3500008c3500008e350000903500009235000094350000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: NetworkManagerOverrides
+      m_OriginalName: NetworkManagerOverrides
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 37068
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_SearchString: 
@@ -673,7 +673,7 @@ MonoBehaviour:
     y: 92
     width: 275
     height: 566
-  m_ScrollPosition: {x: 0, y: 43.95508}
+  m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: -160
