@@ -18,7 +18,7 @@ public class HunterCameraController : MonoBehaviour {
 	private Vector3 origBowOffset;
 
     void Start()
-    {
+    {	
         camOffset = transform.position - focus.transform.position;
 		bowOffset = transform.position - bow.transform.position;
 		origBowOffset = bowOffset;

@@ -30,6 +30,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
 		float health;
+		public Camera cam;
 
 		void Start()
 		{
@@ -44,6 +45,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 			m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 			m_OrigGroundCheckDistance = m_GroundCheckDistance;
+
+			if(gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
+				return;
+
+			cam.enabled = false;
 		}
 
 		void Update(){

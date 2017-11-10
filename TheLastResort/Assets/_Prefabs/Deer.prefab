@@ -169,11 +169,11 @@ GameObject:
   - component: {fileID: 114082135958239084}
   m_Layer: 0
   m_Name: DeerCamera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1846155922009230
 GameObject:
   m_ObjectHideFlags: 1
@@ -926,6 +926,7 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 3
   m_AnimSpeedMultiplier: 3
   m_GroundCheckDistance: 3.5
+  cam: {fileID: 20095827864767770}
 --- !u!114 &114437801656371666
 MonoBehaviour:
   m_ObjectHideFlags: 1
