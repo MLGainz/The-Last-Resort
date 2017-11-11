@@ -20,7 +20,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		Rigidbody m_Rigidbody;
 		Animator m_Animator;
-		bool m_IsGrounded;
+		bool m_IsGrounded; 
 		float m_OrigGroundCheckDistance;
 		const float k_Half = 0.5f;
 		float m_TurnAmount;
@@ -30,14 +30,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
-		float health;
 		public Camera cam;
-		public Slider healthBar;
 
 		void Start()
 		{
 			Cursor.visible = false;
-			health = 100;
 
 			m_Animator = GetComponent<Animator>();
 			m_Rigidbody = GetComponent<Rigidbody>();
@@ -52,25 +49,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				return;
 
 			cam.enabled = false;
-		}
-
-		void Update(){
-			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
-				return;
-			
-			if (health <= 0)
-				this.gameObject.SetActive(false);
-		}
-
-		void OnCollisionEnter(Collision col){
-			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
-				return;
-			
-			if (col.gameObject.name == "Deer") {
-				health -= col.relativeVelocity.magnitude/2;
-				healthBar.value -= col.relativeVelocity.magnitude/2;
-				print (health);
-			}
 		}
 
 		public void Move(Vector3 move, bool crouch, bool jump)

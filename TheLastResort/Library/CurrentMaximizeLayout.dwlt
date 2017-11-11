@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 2568
+  controlID: 13013
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 342}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 2569
+  controlID: 13014
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -143,8 +143,8 @@ MonoBehaviour:
     y: 0
     width: 769
     height: 269
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 5}
   m_Panes:
   - {fileID: 5}
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 2539
+  controlID: 12989
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -353,9 +353,9 @@ MonoBehaviour:
     height: 243
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d6f5fdff
-    m_LastClickedID: -133674
-    m_ExpandedIDs: 6422feff2ea8feff82a8feff94a8feffdea8feffa8c6feff78c7feff3ac9feffd614ffffa415ffff5217ffff9cadffff00000000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: f2b6faffc2b7faff70b9faff1edefafff0defaff9ee0faffca52fbff9c53fbff4a55fbff4cdefcff1cdffcffcce0fcffbc26fdffc66cfdff966dfdff386ffdff6422feff2ea8feff82a8feff94a8feffdea8feffa8c6feff78c7feff3ac9feffd614ffffa415ffff5217ffff9cadffff00000000c2090100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -452,7 +452,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 32260000
     m_LastClickedID: 9778
-    m_ExpandedIDs: 000000001635000072370000ae3e000054400000864000005a4100007c41000086410000a4410000a6410000b8410000164200001e4200004e420000844200008642000098420000ee420000004300000a430000184300006a4300009c430000ae430000b2430000bc430000c6430000cc4300000e49000010490000124900001449000016490000184900001a4900001c4900001e49000020490000224900002449000026490000284900002a490000
+    m_ExpandedIDs: d00bfdff000000001635000072370000ae3e000054400000864000005a4100007c41000086410000a4410000a6410000b8410000164200001e4200004e420000844200008642000098420000ee420000004300000a430000184300006a43000096430000ae430000b2430000bc430000c6430000cc4300000e49000010490000124900001449000016490000184900001a4900001c4900001e49000020490000224900002449000026490000284900002a490000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -477,10 +477,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d6f5fdff
+    scrollPos: {x: 0, y: 60}
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001635000072370000ae3e000054400000864000005a4100007c41000086410000a4410000a6410000b8410000164200001e4200004e420000844200008642000098420000ee420000004300000a430000184300006a4300009c430000ae430000b2430000bc430000c6430000cc4300000e49000010490000124900001449000016490000184900001a4900001c4900001e49000020490000224900002449000026490000284900002a490000
+    m_ExpandedIDs: d00bfdff000000001635000072370000ae3e000054400000864000005a4100007c41000086410000a4410000a6410000b8410000164200001e4200004e420000844200008642000098420000ee420000004300000a430000184300006a43000096430000ae430000b2430000bc430000c6430000cc4300000e49000010490000124900001449000016490000184900001a4900001c4900001e49000020490000224900002449000026490000284900002a490000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -505,8 +505,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: d6f5fdff
-    m_LastClickedInstanceID: -133674
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
@@ -587,7 +587,7 @@ MonoBehaviour:
     y: 92
     width: 275
     height: 566
-  m_ScrollPosition: {x: 0, y: 56.95508}
+  m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: -160

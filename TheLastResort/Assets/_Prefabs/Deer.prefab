@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 54579905569609984}
   - component: {fileID: 114437801656371666}
   - component: {fileID: 114204236510081934}
+  - component: {fileID: 114728855538512876}
   m_Layer: 12
   m_Name: DeerBody
   m_TagString: Untagged
@@ -927,7 +928,9 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 3
   m_AnimSpeedMultiplier: 3
   m_GroundCheckDistance: 3.5
+  health: 0
   cam: {fileID: 20095827864767770}
+  healthBar: {fileID: 0}
 --- !u!114 &114437801656371666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -980,6 +983,22 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &114728855538512876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1183346797833872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8773ca1e3df1710419ba4c37ab601ab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barDisplay: 0
+  pos: {x: 20, y: 500}
+  size: {x: 200, y: 20}
+  emptyTex: {fileID: 0}
+  fullTex: {fileID: 2800000, guid: 97c1990469fdc354996a80b6e9717c4f, type: 3}
 --- !u!114 &114937382991373034
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
@@ -29,13 +30,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
-		public float health;
 		public Camera cam;
 
 		void Start()
 		{
 			Cursor.visible = false;
-			health = 100;
 
 			m_Animator = GetComponent<Animator>();
 			m_Rigidbody = GetComponent<Rigidbody>();
@@ -51,23 +50,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 			cam.enabled = false;
 		}
-
-		void Update(){
-			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
-				return;
-			
-			if (health <= 0)
-				this.gameObject.SetActive(false);
-		}
-
-		void OnCollisionEnter(Collision col){
-			if (col.gameObject.name == "Arrow(Clone)") {
-				Destroy (col.gameObject);
-				health -= col.relativeVelocity.magnitude/4;
-				print (health);
-			}
-		}
-
 
 		public void Move(Vector3 move, bool jump)
 		{

@@ -726,6 +726,7 @@ GameObject:
   - component: {fileID: 136772302878313262}
   - component: {fileID: 114953015545715620}
   - component: {fileID: 114689783841763594}
+  - component: {fileID: 114265838902277676}
   m_Layer: 10
   m_Name: HunterBody
   m_TagString: Untagged
@@ -2926,6 +2927,22 @@ MonoBehaviour:
     i15: 165
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114265838902277676
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1584316716486168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08d9d11f2c43d24b8901b8adfef4010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barDisplay: 0
+  pos: {x: 20, y: 500}
+  size: {x: 200, y: 20}
+  emptyTex: {fileID: 0}
+  fullTex: {fileID: 2800000, guid: 97c1990469fdc354996a80b6e9717c4f, type: 3}
 --- !u!114 &114387358332502742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3011,6 +3028,7 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 1.25
   m_AnimSpeedMultiplier: 1.25
   m_GroundCheckDistance: 3
+  health: 0
   cam: {fileID: 20508444304944800}
   healthBar: {fileID: 0}
 --- !u!124 &124827615546575548
