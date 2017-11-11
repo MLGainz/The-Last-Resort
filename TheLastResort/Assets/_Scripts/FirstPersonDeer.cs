@@ -29,7 +29,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
-		float health;
+		public float health;
 		public Camera cam;
 
 		void Start()
@@ -61,9 +61,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 
 		void OnCollisionEnter(Collision col){
-			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
-				return;
-			
 			if (col.gameObject.name == "Arrow(Clone)") {
 				Destroy (col.gameObject);
 				health -= col.relativeVelocity.magnitude/4;

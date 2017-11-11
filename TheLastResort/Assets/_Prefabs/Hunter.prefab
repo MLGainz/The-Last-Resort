@@ -3012,6 +3012,7 @@ MonoBehaviour:
   m_AnimSpeedMultiplier: 1.25
   m_GroundCheckDistance: 3
   cam: {fileID: 20508444304944800}
+  healthBar: {fileID: 0}
 --- !u!124 &124827615546575548
 Behaviour:
   m_ObjectHideFlags: 1

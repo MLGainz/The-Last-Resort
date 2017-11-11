@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
@@ -31,6 +32,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		bool m_Crouching;
 		float health;
 		public Camera cam;
+		public Slider healthBar;
 
 		void Start()
 		{
@@ -66,6 +68,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			
 			if (col.gameObject.name == "Deer") {
 				health -= col.relativeVelocity.magnitude/2;
+				healthBar.value -= col.relativeVelocity.magnitude/2;
 				print (health);
 			}
 		}

@@ -38,6 +38,7 @@ public class BowScript : MonoBehaviour {
   			projectile.transform.position = launchPos;
  			projectile.transform.rotation = launchRot;
  			projectile.GetComponent<Rigidbody>().isKinematic = true;
+			NetworkServer.Spawn (projectile);
   		}
   		
   		if(Input.GetMouseButton(0)){
