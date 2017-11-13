@@ -727,6 +727,8 @@ GameObject:
   - component: {fileID: 114953015545715620}
   - component: {fileID: 114689783841763594}
   - component: {fileID: 114265838902277676}
+  - component: {fileID: 114764515253376704}
+  - component: {fileID: 114410042201762916}
   m_Layer: 10
   m_Name: HunterBody
   m_TagString: Untagged
@@ -2867,7 +2869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 1
-  m_SendInterval: 0.1
+  m_SendInterval: 0.04761905
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
@@ -2889,7 +2891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4491701050276620}
   m_ChildIndex: 1
-  m_SendInterval: 0.1
+  m_SendInterval: 0.04761905
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -2938,9 +2940,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e08d9d11f2c43d24b8901b8adfef4010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barDisplay: 0
-  pos: {x: 20, y: 500}
-  size: {x: 200, y: 20}
   emptyTex: {fileID: 0}
   fullTex: {fileID: 2800000, guid: 97c1990469fdc354996a80b6e9717c4f, type: 3}
 --- !u!114 &114387358332502742
@@ -2958,6 +2957,18 @@ MonoBehaviour:
   focus: {fileID: 1966041086525036}
   bow: {fileID: 1259610806997558}
   rotateSpeed: 5
+--- !u!114 &114410042201762916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1584316716486168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03752942d8a419e4c9462c19f12165af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!114 &114689783841763594
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2990,6 +3001,38 @@ MonoBehaviour:
   projectile: {fileID: 0}
   timeHeld: 0
   isDrawn: 0
+--- !u!114 &114764515253376704
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1584316716486168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 41
+    i1: 77
+    i2: 186
+    i3: 227
+    i4: 216
+    i5: 187
+    i6: 240
+    i7: 244
+    i8: 59
+    i9: 238
+    i10: 171
+    i11: 18
+    i12: 158
+    i13: 248
+    i14: 65
+    i15: 165
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114927661522487486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3003,7 +3046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4886311858942506}
   m_ChildIndex: 0
-  m_SendInterval: 0.1
+  m_SendInterval: 0.04761905
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -3028,9 +3071,7 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 1.25
   m_AnimSpeedMultiplier: 1.25
   m_GroundCheckDistance: 3
-  health: 0
   cam: {fileID: 20508444304944800}
-  healthBar: {fileID: 0}
 --- !u!124 &124827615546575548
 Behaviour:
   m_ObjectHideFlags: 1

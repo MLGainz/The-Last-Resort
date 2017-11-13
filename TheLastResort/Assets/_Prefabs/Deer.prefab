@@ -79,6 +79,8 @@ GameObject:
   - component: {fileID: 114437801656371666}
   - component: {fileID: 114204236510081934}
   - component: {fileID: 114728855538512876}
+  - component: {fileID: 114601473479655454}
+  - component: {fileID: 114372233547960278}
   m_Layer: 12
   m_Name: DeerBody
   m_TagString: Untagged
@@ -928,9 +930,19 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 3
   m_AnimSpeedMultiplier: 3
   m_GroundCheckDistance: 3.5
-  health: 0
   cam: {fileID: 20095827864767770}
-  healthBar: {fileID: 0}
+--- !u!114 &114372233547960278
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1183346797833872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5f1cc03644f7ca43ba506429965d03a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!114 &114437801656371666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -956,7 +968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4673822785369426}
   m_ChildIndex: 0
-  m_SendInterval: 0.1
+  m_SendInterval: 0.04761905
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -974,7 +986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 1
-  m_SendInterval: 0.1
+  m_SendInterval: 0.04761905
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
@@ -983,6 +995,38 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &114601473479655454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1183346797833872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 71
+    i1: 44
+    i2: 33
+    i3: 1
+    i4: 233
+    i5: 23
+    i6: 9
+    i7: 84
+    i8: 200
+    i9: 216
+    i10: 76
+    i11: 122
+    i12: 50
+    i13: 233
+    i14: 168
+    i15: 29
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114728855538512876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -994,9 +1038,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8773ca1e3df1710419ba4c37ab601ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barDisplay: 0
-  pos: {x: 20, y: 500}
-  size: {x: 200, y: 20}
   emptyTex: {fileID: 0}
   fullTex: {fileID: 2800000, guid: 97c1990469fdc354996a80b6e9717c4f, type: 3}
 --- !u!114 &114937382991373034
