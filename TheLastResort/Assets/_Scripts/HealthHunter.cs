@@ -16,16 +16,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				enabled = false;
 				NetworkServer.Destroy(transform.parent.gameObject);
 			}
-
-			print (health);
 		}
 
 		void OnCollisionEnter(Collision col){
 			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
 				return;
 
+			print (col.gameObject.name);
+
 			if (col.gameObject.name == "DeerBody") {
-				health -= col.relativeVelocity.magnitude;
+				health -= col.relativeVelocity.magnitude/2;
 			}
 		}
 	}
