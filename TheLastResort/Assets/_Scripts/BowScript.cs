@@ -7,6 +7,7 @@ public class BowScript : MonoBehaviour {
 	//fields set in the Unity Inspector pane
 	public GameObject prefabProjectile;
 	public float power = 4f;
+	public float coolDown = 1f;
 	public bool _____________;
 	
 	//fields set dynamically
@@ -15,39 +16,52 @@ public class BowScript : MonoBehaviour {
 	public GameObject projectile;
 	public float timeHeld = 0f;
 	public bool isDrawn = false;
+	public bool canShoot = false;
+	public float nextShot = 0;
 	Transform launchPointTrans;
 	
 	void LateUpdate(){
 		if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
 			return;
-		
-		launchPointTrans = transform.Find("Middle");
+
+		if (Time.time >= nextShot)
+			canShoot = true;
+
+		launchPointTrans = transform.Find ("Middle");
 		launchPos = launchPointTrans.position;
- 		launchRot = launchPointTrans.rotation;
+		launchRot = launchPointTrans.rotation;
+
+		if(canShoot){		
+			if (Input.GetMouseButtonUp (0)) {
+				if (isDrawn) {
+					isDrawn = false;
+					nextShot = Time.time + coolDown;
+					canShoot = false;
+					projectile.GetComponent<Rigidbody> ().isKinematic = false;
+					projectile.GetComponent<Rigidbody> ().velocity = projectile.transform.forward * power * timeHeld;
+					timeHeld = 0;
+				}
+			}
 			
-		if(Input.GetMouseButtonUp(0)){
-			isDrawn = false;
- 			projectile.GetComponent<Rigidbody>().isKinematic = false;
- 			projectile.GetComponent<Rigidbody>().velocity = projectile.transform.forward * power * timeHeld;
-  			timeHeld = 0;
-  		}
-		
-		if(Input.GetMouseButtonDown(0)){
-			isDrawn = true;
-  			projectile = Instantiate(prefabProjectile) as GameObject;
-  			projectile.transform.position = launchPos;
- 			projectile.transform.rotation = launchRot;
- 			projectile.GetComponent<Rigidbody>().isKinematic = true;
-			NetworkServer.Spawn (projectile);
-  		}
-  		
-  		if(Input.GetMouseButton(0)){
- 			if(timeHeld < 6)
- 				timeHeld += 0.25f;
-			
-			projectile.transform.position = launchPos;
-			projectile.transform.rotation = launchRot;
-  			print(timeHeld);
-  		}
+			if (Input.GetMouseButtonDown (0)) {
+				isDrawn = true;
+				projectile = Instantiate (prefabProjectile) as GameObject;
+				projectile.transform.position = launchPos;
+				projectile.transform.rotation = launchRot;
+				projectile.GetComponent<Rigidbody> ().isKinematic = true;
+				NetworkServer.Spawn (projectile);
+			}
+	  		
+			if (Input.GetMouseButton (0)) {
+				if (isDrawn) {
+					if (timeHeld < 6)
+						timeHeld += 0.25f;
+					
+					projectile.transform.position = launchPos;
+					projectile.transform.rotation = launchRot;
+					print (timeHeld);
+				}
+			}
+		}
 	}
 }

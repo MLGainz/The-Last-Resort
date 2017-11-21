@@ -2995,12 +2995,15 @@ MonoBehaviour:
   prefabProjectile: {fileID: 1534048356839002, guid: fca6ace3a8d77c2458b356880b27d774,
     type: 2}
   power: 12
+  coolDown: 0.5
   _____________: 1
   launchPos: {x: 0, y: 0, z: 0}
   launchRot: {x: 0, y: 0, z: 0, w: 0}
   projectile: {fileID: 0}
   timeHeld: 0
   isDrawn: 0
+  canShoot: 0
+  nextShot: 0
 --- !u!114 &114764515253376704
 MonoBehaviour:
   m_ObjectHideFlags: 1
