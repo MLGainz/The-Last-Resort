@@ -17,7 +17,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				NetworkServer.Destroy(transform.parent.gameObject);
 			}
 
-			print (health);
+			//print (health);
 		}
 
 		void OnCollisionEnter(Collision col){
@@ -28,6 +28,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				NetworkServer.Destroy(col.gameObject);
 				health -= col.relativeVelocity.magnitude/3;
 			}
+		}
+
+		public void FallDamage(float airDist){
+			health -= airDist * 1.5f;
 		}
 	}
 }

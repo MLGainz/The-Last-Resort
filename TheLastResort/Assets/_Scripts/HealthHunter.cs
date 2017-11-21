@@ -28,5 +28,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				health -= col.relativeVelocity.magnitude/2;
 			}
 		}
+
+		public void FallDamage(float airDist){
+			health -= airDist * 1.5f;
+		}
 	}
 }

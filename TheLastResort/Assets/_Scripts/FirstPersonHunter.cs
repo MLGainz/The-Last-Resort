@@ -12,7 +12,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		[SerializeField] float m_MovingTurnSpeed = 360;
 		[SerializeField] float m_StationaryTurnSpeed = 180;
 		[SerializeField] float m_JumpPower = 12f;
-		[Range(1f, 10f)][SerializeField] float m_GravityMultiplier = 2f;
+		[Range(1f, 20f)][SerializeField] float m_GravityMultiplier = 2f;
 		[SerializeField] float m_RunCycleLegOffset = 0.2f; //specific to the character in sample assets, will need to be modified to work with others
 		[SerializeField] float m_MoveSpeedMultiplier = 1f;
 		[SerializeField] float m_AnimSpeedMultiplier = 1f;
@@ -32,6 +32,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		bool m_Crouching;
 		bool m_Sprinting;
 		public Camera cam;
+		private float airDist = 0;
 
 		void Start()
 		{
@@ -48,6 +49,19 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				return;
 
 			cam.enabled = false;
+		}
+
+		void OnCollisionEnter(Collision col){
+			if(col.gameObject.name == "Terrain_PlayingField"){
+				airDist -= gameObject.transform.position.y;
+
+				//print (airDist);
+
+				if (airDist > 15)
+					GetComponent<HealthHunter> ().FallDamage (airDist);
+
+				airDist = gameObject.transform.position.y;
+			}
 		}
 
 		public void Move(Vector3 move, bool crouch, bool sprint, bool jump)
@@ -137,7 +151,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			m_Animator.SetFloat("Forward", m_ForwardAmount, 0.1f, Time.deltaTime);
 			m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
 			m_Animator.SetBool("Crouch", m_Crouching);
-			m_Animator.SetBool("OnGround", m_IsGrounded);
+			//m_Animator.SetBool("OnGround", m_IsGrounded);
 			if (!m_IsGrounded)
 			{
 				m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);
@@ -190,7 +204,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		{
 			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
 				return;
-			
+
 			// check whether conditions are right to allow a jump:
 			if (jump && !crouch && m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
 			{

@@ -3072,11 +3072,11 @@ MonoBehaviour:
   m_MovingTurnSpeed: 360
   m_StationaryTurnSpeed: 180
   m_JumpPower: 20
-  m_GravityMultiplier: 8
+  m_GravityMultiplier: 13
   m_RunCycleLegOffset: 0.2
   m_MoveSpeedMultiplier: 1.25
   m_AnimSpeedMultiplier: 1.25
-  m_GroundCheckDistance: 3
+  m_GroundCheckDistance: 1
   cam: {fileID: 20508444304944800}
 --- !u!124 &124827615546575548
 Behaviour:
