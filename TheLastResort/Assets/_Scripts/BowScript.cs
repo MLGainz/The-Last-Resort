@@ -8,6 +8,7 @@ public class BowScript : MonoBehaviour {
 	public GameObject prefabProjectile;
 	public float power = 4f;
 	public float coolDown = 1f;
+	public Texture2D crosshair;
 	public bool _____________;
 	
 	//fields set dynamically
@@ -19,7 +20,14 @@ public class BowScript : MonoBehaviour {
 	public bool canShoot = false;
 	public float nextShot = 0;
 	Transform launchPointTrans;
-	
+
+	void OnGUI()
+	{
+		float xMin = (Screen.width / 2) - 22;
+		float yMin = (Screen.height / 2) - 20;
+		GUI.DrawTexture(new Rect(xMin, yMin, 50, 50), crosshair);
+	}
+
 	void LateUpdate(){
 		if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
 			return;
