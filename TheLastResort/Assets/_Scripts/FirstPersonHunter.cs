@@ -32,11 +32,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		bool m_Crouching;
 		bool m_Sprinting;
 		public Camera cam;
-		private bool isPaused;
 
 		void Start()
 		{
-			isPaused = GameObject.Find("HunterCamera").GetComponent<HunterCameraController>().paused;
 			m_Animator = GetComponent<Animator>();
 			m_Rigidbody = GetComponent<Rigidbody>();
 			m_Capsule = GetComponent<CapsuleCollider>();
@@ -55,9 +53,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		public void Move(Vector3 move, bool crouch, bool sprint, bool jump)
 		{
 			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity> ().isLocalPlayer)
-				return;
-
-			if (isPaused)
 				return;
 
 			m_Sprinting = sprint;
@@ -135,9 +130,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		void UpdateAnimator(Vector3 move)
 		{
-			if (isPaused)
-				return;
-			
 			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
 				return;
 			
@@ -198,9 +190,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		{
 			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
 				return;
-
-			if (isPaused)
-				return; 
 			
 			// check whether conditions are right to allow a jump:
 			if (jump && !crouch && m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
@@ -228,9 +217,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		{
 			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
 				return;
-
-			if (isPaused)
-				return; 
 			
 			// we implement this function to override the default root motion.
 			// this allows us to modify the positional speed before it's applied.

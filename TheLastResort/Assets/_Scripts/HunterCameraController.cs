@@ -10,10 +10,10 @@ public class HunterCameraController : MonoBehaviour {
 	public GameObject bow;
 	public float rotateSpeed = 5;
 	public bool paused = false;
+	public float pauseDelay = 0.25f;
 
 	private float pitch = 0.0f;
 	private float bowY = 0;
-	public float pauseDelay = 0.25f;
 	private float nextPause;
 	private bool canPause = true;
     private Vector3 camOffset;
@@ -30,11 +30,11 @@ public class HunterCameraController : MonoBehaviour {
 
     void LateUpdate()
     {	
-		if (Time.time >= nextPause)
-			canPause = true;
-
 		if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity> ().isLocalPlayer)
 			return;
+		
+		if (Time.time >= nextPause)
+			canPause = true;
 		
 		if (!paused) {
 			if (Input.GetKey (KeyCode.Escape) && canPause)

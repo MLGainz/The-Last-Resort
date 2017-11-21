@@ -35,6 +35,9 @@ public class BowScript : MonoBehaviour {
 		if (Time.time >= nextShot)
 			canShoot = true;
 
+		if (GameObject.Find ("HunterCamera").GetComponent<HunterCameraController> ().paused)
+			canShoot = false;
+
 		launchPointTrans = transform.Find ("Middle");
 		launchPos = launchPointTrans.position;
 		launchRot = launchPointTrans.rotation;
