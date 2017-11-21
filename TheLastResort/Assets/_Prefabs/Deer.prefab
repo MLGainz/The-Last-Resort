@@ -910,7 +910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1183346797833872}
   focus: {fileID: 1977241512231892}
-  rotateSpeed: 2
+  rotateSpeed: 3
 --- !u!114 &114204236510081934
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -922,13 +922,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a0b476082f95af40ba5a2e520c1d1b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovingTurnSpeed: 180
-  m_StationaryTurnSpeed: 90
+  m_MovingTurnSpeed: 240
+  m_StationaryTurnSpeed: 180
   m_JumpPower: 20
   m_GravityMultiplier: 4
   m_RunCycleLegOffset: 0.2
-  m_MoveSpeedMultiplier: 3
-  m_AnimSpeedMultiplier: 3
+  m_MoveSpeedMultiplier: 2.5
+  m_AnimSpeedMultiplier: 2.5
   m_GroundCheckDistance: 3.5
   cam: {fileID: 20095827864767770}
 --- !u!114 &114372233547960278

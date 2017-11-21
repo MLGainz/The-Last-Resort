@@ -22,7 +22,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
 				return;
 
-			print (col.gameObject.name);
+			//print (col.gameObject.name);
 
 			if (col.gameObject.name == "DeerBody") {
 				health -= col.relativeVelocity.magnitude/2;

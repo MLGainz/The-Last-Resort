@@ -67,7 +67,7 @@ public class BowScript : MonoBehaviour {
 					
 					projectile.transform.position = launchPos;
 					projectile.transform.rotation = launchRot;
-					print (timeHeld);
+					//print (timeHeld);
 				}
 			}
 		}

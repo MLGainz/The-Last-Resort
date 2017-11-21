@@ -2957,6 +2957,8 @@ MonoBehaviour:
   focus: {fileID: 1966041086525036}
   bow: {fileID: 1259610806997558}
   rotateSpeed: 5
+  paused: 0
+  pauseDelay: 0.25
 --- !u!114 &114410042201762916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3069,7 +3071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MovingTurnSpeed: 360
   m_StationaryTurnSpeed: 180
-  m_JumpPower: 10
+  m_JumpPower: 20
   m_GravityMultiplier: 8
   m_RunCycleLegOffset: 0.2
   m_MoveSpeedMultiplier: 1.25

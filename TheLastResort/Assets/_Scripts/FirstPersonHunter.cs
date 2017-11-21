@@ -30,12 +30,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
+		bool m_Sprinting;
 		public Camera cam;
+		private bool isPaused;
 
 		void Start()
 		{
-			Cursor.visible = false;
-
+			isPaused = GameObject.Find("HunterCamera").GetComponent<HunterCameraController>().paused;
 			m_Animator = GetComponent<Animator>();
 			m_Rigidbody = GetComponent<Rigidbody>();
 			m_Capsule = GetComponent<CapsuleCollider>();
@@ -51,38 +52,39 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			cam.enabled = false;
 		}
 
-		public void Move(Vector3 move, bool crouch, bool jump)
+		public void Move(Vector3 move, bool crouch, bool sprint, bool jump)
 		{
-			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
+			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity> ().isLocalPlayer)
 				return;
-			
+
+			if (isPaused)
+				return;
+
+			m_Sprinting = sprint;
 			// convert the world relative moveInput vector into a local-relative
 			// turn amount and forward amount required to head in the desired
 			// direction.
-			if (move.magnitude > 1f) move.Normalize();
-			move = transform.InverseTransformDirection(move);
-			CheckGroundStatus();
-			move = Vector3.ProjectOnPlane(move, m_GroundNormal);
+			//if (move.magnitude > 1f) move.Normalize();
+			move = transform.InverseTransformDirection (move);
+			CheckGroundStatus ();
+			move = Vector3.ProjectOnPlane (move, m_GroundNormal);
 			//m_TurnAmount = Mathf.Atan2(move.x, move.z);
 			m_ForwardAmount = move.z;
 
 			//ApplyExtraTurnRotation();
 
 			// control and velocity handling is different when grounded and airborne:
-			if (m_IsGrounded)
-			{
-				HandleGroundedMovement(crouch, jump);
-			}
-			else
-			{
-				HandleAirborneMovement();
+			if (m_IsGrounded) {
+				HandleGroundedMovement (crouch, jump);
+			} else {
+				HandleAirborneMovement ();
 			}
 
-			ScaleCapsuleForCrouching(crouch);
-			PreventStandingInLowHeadroom();
+			ScaleCapsuleForCrouching (crouch);
+			PreventStandingInLowHeadroom ();
 
 			// send input and other state parameters to the animator
-			UpdateAnimator(move);
+			UpdateAnimator (move);
 		}
 
 
@@ -133,6 +135,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		void UpdateAnimator(Vector3 move)
 		{
+			if (isPaused)
+				return;
+			
 			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
 				return;
 			
@@ -162,7 +167,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// which affects the movement speed because of the root motion.
 			if (m_IsGrounded && move.magnitude > 0)
 			{
-				m_Animator.speed = m_AnimSpeedMultiplier;
+				if (!m_Sprinting) {
+					m_Animator.speed = m_AnimSpeedMultiplier;
+				} else {
+					m_Animator.speed = m_AnimSpeedMultiplier*1.5f;
+				}
 			}
 			else
 			{
@@ -189,6 +198,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		{
 			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
 				return;
+
+			if (isPaused)
+				return; 
 			
 			// check whether conditions are right to allow a jump:
 			if (jump && !crouch && m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
@@ -216,6 +228,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		{
 			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
 				return;
+
+			if (isPaused)
+				return; 
 			
 			// we implement this function to override the default root motion.
 			// this allows us to modify the positional speed before it's applied.
