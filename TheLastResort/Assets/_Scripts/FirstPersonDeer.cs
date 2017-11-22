@@ -32,6 +32,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		bool m_Crouching;
 		bool m_Charging;
 		public Camera cam;
+		public Camera miniCam;
 		private float airDist = 0;
 
 		void Start()
@@ -49,6 +50,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				return;
 
 			cam.enabled = false;
+			miniCam.enabled = false;
 		}
 
 		void OnCollisionEnter(Collision col){

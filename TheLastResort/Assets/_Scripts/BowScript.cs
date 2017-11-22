@@ -23,6 +23,9 @@ public class BowScript : MonoBehaviour {
 
 	void OnGUI()
 	{
+		if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
+			return;
+		
 		float xMin = (Screen.width / 2) - 22;
 		float yMin = (Screen.height / 2) - 20;
 		GUI.DrawTexture(new Rect(xMin, yMin, 50, 50), crosshair);
