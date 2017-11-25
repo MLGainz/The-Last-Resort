@@ -25,7 +25,8 @@ public class Timer : MonoBehaviour {
 			minutes = (int)(timeLeft / 60);
 			seconds = (int)(timeLeft % 60);
 		} else {
-			winText.text = "Deer Win";
+			EndScene stop = FindObjectOfType<EndScene>(); 
+			stop.EndGame();
 		}
 	}
 }

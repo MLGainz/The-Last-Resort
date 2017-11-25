@@ -8,6 +8,7 @@ public class NetworkManagerOverrides : NetworkLobbyManager {
 	[SerializeField] GameObject m_PlayerPrefab1;
 	[SerializeField] GameObject m_PlayerPrefab2;
 	public bool isHunter = false;
+	public int deer = 0;
 
 	void Awake(){
 		ClientScene.RegisterPrefab(m_PlayerPrefab1);
@@ -15,25 +16,20 @@ public class NetworkManagerOverrides : NetworkLobbyManager {
 	}
 
 	public override GameObject OnLobbyServerCreateGamePlayer (NetworkConnection conn, short playerControllerId){
-		GameObject player;
+		GameObject player = new GameObject();
 		Transform startPos = GetStartPosition();
-		if (startPos != null)
-		{	
-			if (isHunter == false) {
+
+		if (isHunter == false) {
+			int hunt = Random.Range (1, 4-deer);
+			if (hunt == 1 || numPlayers - 1 == deer ) {
 				player = (GameObject)Instantiate (m_PlayerPrefab1, startPos.position, startPos.rotation);
 				isHunter = true;
 			} else {
 				player = (GameObject)Instantiate (m_PlayerPrefab2, startPos.position, startPos.rotation);
+				deer += 1;
 			}
-		}
-		else
-		{
-			if (isHunter == false) {
-				player = (GameObject)Instantiate(m_PlayerPrefab1, Vector3.zero, Quaternion.identity);
-				isHunter = true;
-			} else {
-				player = (GameObject)Instantiate (m_PlayerPrefab2, Vector3.zero, Quaternion.identity);
-			}
+		} else {
+			player = (GameObject)Instantiate (m_PlayerPrefab2, startPos.position, startPos.rotation);
 		}
 
 		return(player);

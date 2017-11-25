@@ -13,8 +13,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				return;
 
 			if (health <= 0) {
-				enabled = false;
-				NetworkServer.Destroy(transform.parent.gameObject);
+				EndScene stop = FindObjectOfType<EndScene>(); 
+				stop.EndGame();
 			}
 		}
 
