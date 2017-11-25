@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class NetworkManagerOverrides : NetworkManager {
+public class NetworkManagerOverrides : NetworkLobbyManager {
 
 	[SerializeField] GameObject m_PlayerPrefab1;
 	[SerializeField] GameObject m_PlayerPrefab2;
@@ -14,29 +14,7 @@ public class NetworkManagerOverrides : NetworkManager {
 		ClientScene.RegisterPrefab(m_PlayerPrefab2);
 	}
 
-	public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId, NetworkReader extraMessageReader){
-		OnServerAddPlayer(conn, playerControllerId);
-	}
-
-	public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId){
-		if (m_PlayerPrefab1 == null || m_PlayerPrefab2 == null)
-		{
-			if (LogFilter.logError) { Debug.LogError("A PlayerPrefab is empty on the NetworkManager. Please setup a PlayerPrefab object."); }
-			return;
-		}
-
-		if (m_PlayerPrefab1.GetComponent<NetworkIdentity>() == null || m_PlayerPrefab2.GetComponent<NetworkIdentity>() == null)
-		{
-			if (LogFilter.logError) { Debug.LogError("The PlayerPrefab does not have a NetworkIdentity. Please add a NetworkIdentity to the player prefab."); }
-			return;
-		}
-
-		if (playerControllerId < conn.playerControllers.Count  && conn.playerControllers[playerControllerId].IsValid && conn.playerControllers[playerControllerId].gameObject != null)
-		{
-			if (LogFilter.logError) { Debug.LogError("There is already a player at that playerControllerId for this connections."); }
-			return;
-		}
-
+	public override GameObject OnLobbyServerCreateGamePlayer (NetworkConnection conn, short playerControllerId){
 		GameObject player;
 		Transform startPos = GetStartPosition();
 		if (startPos != null)
@@ -58,6 +36,6 @@ public class NetworkManagerOverrides : NetworkManager {
 			}
 		}
 
-		NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
+		return(player);
 	}
 }

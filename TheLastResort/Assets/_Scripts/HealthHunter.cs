@@ -30,7 +30,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 
 		public void FallDamage(float airDist){
-			health -= airDist * 1.5f;
+			if (airDist < 40) {
+				health -= airDist * 1.5f;
+			} else {
+				health = 0;
+			}
 		}
 	}
 }
