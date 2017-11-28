@@ -14,6 +14,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		public Vector3 m_Move;
 		private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
 		public Camera cam;
+		public bool charge;
 
 
 		private void Start()
@@ -46,7 +47,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// read inputs
 			float h = CrossPlatformInputManager.GetAxis("Horizontal");
 			float v = CrossPlatformInputManager.GetAxis("Vertical");
-			bool charge = Input.GetMouseButton (0);
+			charge = Input.GetMouseButton (0);
 
 			// calculate move direction to pass to character
 			if (m_Cam != null)
