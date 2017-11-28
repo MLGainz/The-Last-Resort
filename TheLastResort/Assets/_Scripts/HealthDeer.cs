@@ -25,8 +25,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				return;
 
 			if (col.gameObject.name == "Arrow(Clone)") {
-				NetworkServer.Destroy(col.gameObject);
-				health -= col.relativeVelocity.magnitude/3;
+				health -= (col.gameObject.GetComponent<Arrow> ().timeHeld * GameObject.Find("Bow").GetComponent<BowScript>().power)/(8-col.gameObject.GetComponent<Arrow> ().timeHeld);
+				//health -= col.relativeVelocity.magnitude/3;
 			}
 		}
 
