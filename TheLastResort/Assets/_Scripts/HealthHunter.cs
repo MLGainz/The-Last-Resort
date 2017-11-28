@@ -25,7 +25,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			//print (col.gameObject.name);
 
 			if (col.gameObject.name == "DeerBody") {
-				health -= col.relativeVelocity.magnitude/2;
+				Vector3 move = col.gameObject.GetComponent<DeerUserController> ().m_Move;
+				float speed = Mathf.Abs(move.x) + Mathf.Abs(move.z);
+				health -= speed*5;
 			}
 		}
 

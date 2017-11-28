@@ -2087,7 +2087,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1672705027776508}
-  m_LocalRotation: {x: 0.5326752, y: 0.070340455, z: 0.83613276, w: -0.110415146}
+  m_LocalRotation: {x: 0.53267515, y: 0.07034045, z: 0.83613265, w: -0.11041513}
   m_LocalPosition: {x: 0.000022271464, y: -0.00006150465, z: 0.026027026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2749,7 +2749,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294966271
+    m_Bits: 4294941695
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -3008,7 +3008,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1220263684974686}
+  playerArrowPrefab: {fileID: 1235595241042954, guid: e40a365efd5d2094482e819553d99375,
+    type: 2}
+  enemyDotPrefab: {fileID: 1724539121920844, guid: c36a63ce34ef88748a6631a1838bdfa3,
+    type: 2}
   heightOffset: 100
+  cam: {fileID: 20512323969744570}
 --- !u!114 &114091964325208012
 MonoBehaviour:
   m_ObjectHideFlags: 1

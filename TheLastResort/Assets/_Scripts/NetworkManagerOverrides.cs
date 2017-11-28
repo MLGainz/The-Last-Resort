@@ -15,6 +15,47 @@ public class NetworkManagerOverrides : NetworkLobbyManager {
 		ClientScene.RegisterPrefab(m_PlayerPrefab2);
 	}
 
+	public override void OnClientSceneChanged (NetworkConnection conn)
+	{
+		string loadedSceneName = networkSceneName;
+		if (loadedSceneName == lobbyScene) {
+			if (client.isConnected)
+				CallOnClientEnterLobby ();
+		} else {
+			CallOnClientExitLobby ();
+		}
+
+		//base.OnClientSceneChanged (conn);
+		ClientScene.Ready(conn);
+		OnLobbyClientSceneChanged(conn);
+	}
+
+
+	void CallOnClientEnterLobby(){
+		deer = 0;
+		isHunter = false;
+
+		OnLobbyClientEnter ();
+		foreach (var player in lobbySlots) {
+			if (player == null)
+				continue;
+
+			player.readyToBegin = false;
+			player.OnClientEnterLobby ();
+		}
+	}
+
+	void CallOnClientExitLobby(){
+		OnLobbyClientExit ();
+		foreach (var player in lobbySlots) {
+			if (player == null)
+				continue;
+
+			player.readyToBegin = false;
+			player.OnClientExitLobby ();
+		}
+	}
+
 	public override GameObject OnLobbyServerCreateGamePlayer (NetworkConnection conn, short playerControllerId){
 		GameObject player = new GameObject();
 		Transform startPos = GetStartPosition();

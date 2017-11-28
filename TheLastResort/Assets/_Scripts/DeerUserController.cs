@@ -11,7 +11,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		private FirstPersonDeer m_Character; // A reference to the ThirdPersonCharacter on the object
 		private Transform m_Cam;                  // A reference to the main camera in the scenes transform
 		private Vector3 m_CamForward;             // The current forward direction of the camera
-		private Vector3 m_Move;
+		public Vector3 m_Move;
 		private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
 		public Camera cam;
 
@@ -62,7 +62,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 
 			// walk speed multiplier
-			if (Input.GetKey(KeyCode.LeftShift)) m_Move *= 1.5f;
+			if (Input.GetMouseButton(0)) m_Move *= 1.5f;
 
 			// pass all parameters to the character control script
 			m_Character.Move(m_Move, m_Jump, charge);

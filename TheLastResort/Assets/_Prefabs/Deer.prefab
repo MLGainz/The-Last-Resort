@@ -493,7 +493,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294942719
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1077,7 +1077,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1095788978139336}
+  playerArrowPrefab: {fileID: 1235595241042954, guid: 4c67e0ea365d37c4fa986137f2e401fd,
+    type: 2}
+  enemyDotPrefab: {fileID: 1724539121920844, guid: bf60dd96c7e2797468d83c1da9f9d3e5,
+    type: 2}
   heightOffset: 100
+  cam: {fileID: 20190941903441190}
 --- !u!114 &114576615758798838
 MonoBehaviour:
   m_ObjectHideFlags: 1

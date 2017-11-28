@@ -2385,7 +2385,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -3310,6 +3310,10 @@ MonoBehaviour:
   m_OnlineScene: 
   m_SpawnPrefabs:
   - {fileID: 1534048356839002, guid: fca6ace3a8d77c2458b356880b27d774, type: 2}
+  - {fileID: 1724539121920844, guid: c36a63ce34ef88748a6631a1838bdfa3, type: 2}
+  - {fileID: 1724539121920844, guid: bf60dd96c7e2797468d83c1da9f9d3e5, type: 2}
+  - {fileID: 1235595241042954, guid: 4c67e0ea365d37c4fa986137f2e401fd, type: 2}
+  - {fileID: 1235595241042954, guid: e40a365efd5d2094482e819553d99375, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -3381,6 +3385,7 @@ MonoBehaviour:
   m_PlayerPrefab2: {fileID: 1890426589039762, guid: 472c2101e9170954c8d84c7a32e9a81d,
     type: 2}
   isHunter: 0
+  deer: 0
 --- !u!4 &535663946
 Transform:
   m_ObjectHideFlags: 0
