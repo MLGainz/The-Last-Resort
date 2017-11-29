@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class BowScript : NetworkBehaviour {
+public class BowScript : MonoBehaviour {
 	//fields set in the Unity Inspector pane
 	public GameObject prefabProjectile;
-	[SyncVar] public float power = 4f;
+	public float power = 4f;
 	public float coolDown = 1f;
 	public Texture2D crosshair;
 	public bool _____________;
@@ -14,8 +14,8 @@ public class BowScript : NetworkBehaviour {
 	//fields set dynamically
 	public Vector3 launchPos;
 	public Quaternion launchRot;
-	private GameObject projectile;
-	[SyncVar] public float timeHeld = 0f;
+	public GameObject projectile;
+	public float timeHeld = 0f;
 	public bool isDrawn = false;
 	public bool canShoot = false;
 	public float nextShot = 0;
@@ -60,7 +60,6 @@ public class BowScript : NetworkBehaviour {
 			if (Input.GetMouseButtonDown (0)) {
 				isDrawn = true;
 				projectile = Instantiate (prefabProjectile) as GameObject;
-				Network.Instantiate (projectile, launchPos, launchRot, 0);
 				projectile.transform.position = launchPos;
 				projectile.transform.rotation = launchRot;
 				projectile.GetComponent<Rigidbody> ().isKinematic = true;

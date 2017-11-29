@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
-public class Timer : MonoBehaviour {
+public class Timer : NetworkBehaviour {
 	public int minutes = 5;
-	public Text timer;
+	[SyncVar] public Text timer;
 	public Text winText;
 
 	private int seconds;
