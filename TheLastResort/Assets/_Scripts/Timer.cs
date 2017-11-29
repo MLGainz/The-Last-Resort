@@ -6,11 +6,11 @@ using UnityEngine.Networking;
 
 public class Timer : NetworkBehaviour {
 	public int minutes = 5;
-	[SyncVar] public Text timer;
+	public Text timer;
 	public Text winText;
 
 	private int seconds;
-	private float timeLeft;
+	[SyncVar] private float timeLeft;
 
 	void Start(){
 		winText.text = "";

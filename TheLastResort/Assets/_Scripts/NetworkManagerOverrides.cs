@@ -67,10 +67,11 @@ public class NetworkManagerOverrides : NetworkLobbyManager {
 				isHunter = true;
 			} else {
 				player = (GameObject)Instantiate (m_PlayerPrefab2, startPos.position, startPos.rotation);
-				deer += 1;
+				deer++;
 			}
 		} else {
 			player = (GameObject)Instantiate (m_PlayerPrefab2, startPos.position, startPos.rotation);
+			deer++;
 		}
 
 		return(player);

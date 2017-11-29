@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class BowScript : MonoBehaviour {
+public class BowScript : NetworkBehaviour {
 	//fields set in the Unity Inspector pane
 	public GameObject prefabProjectile;
 	public float power = 4f;
@@ -45,7 +45,16 @@ public class BowScript : MonoBehaviour {
 		launchPos = launchPointTrans.position;
 		launchRot = launchPointTrans.rotation;
 
-		if(canShoot){		
+		if(canShoot){	
+			if (Input.GetMouseButtonDown (0)) {
+				isDrawn = true;
+				projectile = Instantiate (prefabProjectile) as GameObject;
+				projectile.transform.position = launchPos;
+				projectile.transform.rotation = launchRot;
+				projectile.GetComponent<Rigidbody> ().isKinematic = true;
+				NetworkServer.Spawn (projectile);
+			}
+
 			if (Input.GetMouseButtonUp (0)) {
 				if (isDrawn) {
 					isDrawn = false;
@@ -55,15 +64,6 @@ public class BowScript : MonoBehaviour {
 					projectile.GetComponent<Rigidbody> ().velocity = projectile.transform.forward * power * timeHeld;
 					timeHeld = 0;
 				}
-			}
-			
-			if (Input.GetMouseButtonDown (0)) {
-				isDrawn = true;
-				projectile = Instantiate (prefabProjectile) as GameObject;
-				projectile.transform.position = launchPos;
-				projectile.transform.rotation = launchRot;
-				projectile.GetComponent<Rigidbody> ().isKinematic = true;
-				NetworkServer.Spawn (projectile);
 			}
 	  		
 			if (Input.GetMouseButton (0)) {
