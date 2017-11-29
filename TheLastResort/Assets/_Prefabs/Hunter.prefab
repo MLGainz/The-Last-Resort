@@ -311,7 +311,6 @@ GameObject:
   - component: {fileID: 114731105067185498}
   - component: {fileID: 114390883206599576}
   - component: {fileID: 114091964325208012}
-  - component: {fileID: 114434004293604148}
   - component: {fileID: 114934307332886276}
   m_Layer: 10
   m_Name: HunterBody
@@ -1024,6 +1023,8 @@ GameObject:
   - component: {fileID: 92065470232810166}
   - component: {fileID: 81866305238179728}
   - component: {fileID: 114325951524686002}
+  - component: {fileID: 114682090285940812}
+  - component: {fileID: 114163611172338214}
   m_Layer: 0
   m_Name: Hunter
   m_TagString: Untagged
@@ -1160,7 +1161,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4759758529979522}
-  - component: {fileID: 114177539377206842}
   m_Layer: 9
   m_Name: Bow
   m_TagString: Untagged
@@ -3027,12 +3027,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emptyTex: {fileID: 0}
   fullTex: {fileID: 2800000, guid: 97c1990469fdc354996a80b6e9717c4f, type: 3}
---- !u!114 &114177539377206842
+--- !u!114 &114163611172338214
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1804370104196578}
+  m_GameObject: {fileID: 1633788699060552}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb40ba31aa3d9dc47820e21a4c3ca57b, type: 3}
@@ -3043,10 +3043,10 @@ MonoBehaviour:
   power: 15
   coolDown: 0.5
   crosshair: {fileID: 2800000, guid: 277f6eabb99a1634f8990b9448553c01, type: 3}
-  _____________: 1
+  _____________: 0
   launchPos: {x: 0, y: 0, z: 0}
   launchRot: {x: 0, y: 0, z: 0, w: 0}
-  projectile: {fileID: 0}
+  projectile: {fileID: 1534048356839002, guid: fca6ace3a8d77c2458b356880b27d774, type: 2}
   timeHeld: 0
   isDrawn: 0
   canShoot: 0
@@ -3143,38 +3143,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Move: {x: 0, y: 0, z: 0}
   cam: {fileID: 20512062513227262}
---- !u!114 &114434004293604148
+--- !u!114 &114682090285940812
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1220263684974686}
+  m_GameObject: {fileID: 1633788699060552}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 823b73e70169dcc4f876f2e0a13c2210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 41
-    i1: 77
-    i2: 186
-    i3: 227
-    i4: 216
-    i5: 187
-    i6: 240
-    i7: 244
-    i8: 59
-    i9: 238
-    i10: 171
-    i11: 18
-    i12: 158
-    i13: 248
-    i14: 65
-    i15: 165
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_SyncVarDirtyBits: 0
+  m_LastSendTime: 0
+  m_SyncVarGuard: 0
+  m_MyView: {fileID: 0}
 --- !u!114 &114704090335627784
 MonoBehaviour:
   m_ObjectHideFlags: 1

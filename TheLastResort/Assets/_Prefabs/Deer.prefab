@@ -46,7 +46,6 @@ GameObject:
   - component: {fileID: 114103706744529282}
   - component: {fileID: 114172119505380792}
   - component: {fileID: 114685445092154320}
-  - component: {fileID: 114219426879667584}
   - component: {fileID: 114733052901219050}
   m_Layer: 12
   m_Name: DeerBody
@@ -992,7 +991,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 480e4200416adcc44850d0a5a2c0e40d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Move: {x: 0, y: 0, z: 0}
   cam: {fileID: 20902986256897150}
+  charge: 0
 --- !u!114 &114172119505380792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1014,38 +1015,6 @@ MonoBehaviour:
   m_GroundCheckDistance: 3.5
   cam: {fileID: 20902986256897150}
   miniCam: {fileID: 20190941903441190}
---- !u!114 &114219426879667584
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1095788978139336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 71
-    i1: 44
-    i2: 33
-    i3: 1
-    i4: 233
-    i5: 23
-    i6: 9
-    i7: 84
-    i8: 200
-    i9: 216
-    i10: 76
-    i11: 122
-    i12: 50
-    i13: 233
-    i14: 168
-    i15: 29
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!114 &114369114298778812
 MonoBehaviour:
   m_ObjectHideFlags: 1

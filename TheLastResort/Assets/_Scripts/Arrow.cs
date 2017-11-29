@@ -15,15 +15,11 @@ public class Arrow : NetworkBehaviour {
 	// Update is called once per frame
 	void LateUpdate(){
 		if (this.GetComponent<Rigidbody> ().velocity == empty && !isFired) {
-			timeHeld = GameObject.Find ("Bow").GetComponent<BowScript> ().timeHeld;
+			timeHeld = GameObject.Find ("Hunter(Clone)").GetComponent<BowScript> ().timeHeld;
 		} else if (this.GetComponent<Rigidbody> ().velocity != empty) {
 			isFired = true;
 		} else if (this.GetComponent<Rigidbody> ().velocity == empty && isFired) {
 			timeHeld = 0;
 		}
-	}
-
-	void OnCollisionEnter(Collision col){
-		
 	}
 }

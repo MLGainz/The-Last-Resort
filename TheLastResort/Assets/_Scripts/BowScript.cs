@@ -23,7 +23,7 @@ public class BowScript : NetworkBehaviour {
 
 	void OnGUI()
 	{
-		if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
+		if (!gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
 			return;
 		
 		float xMin = (Screen.width / 2) - 22;
@@ -32,7 +32,7 @@ public class BowScript : NetworkBehaviour {
 	}
 
 	void LateUpdate(){
-		if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
+		if (!gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
 			return;
 
 		if (Time.time >= nextShot)
@@ -41,18 +41,14 @@ public class BowScript : NetworkBehaviour {
 		if (GameObject.Find ("HunterCamera").GetComponent<HunterCameraController> ().paused)
 			canShoot = false;
 
-		launchPointTrans = transform.Find ("Middle");
+		launchPointTrans = GameObject.Find("Bow").transform.Find ("Middle");
 		launchPos = launchPointTrans.position;
 		launchRot = launchPointTrans.rotation;
 
 		if(canShoot){	
 			if (Input.GetMouseButtonDown (0)) {
 				isDrawn = true;
-				projectile = Instantiate (prefabProjectile) as GameObject;
-				projectile.transform.position = launchPos;
-				projectile.transform.rotation = launchRot;
-				projectile.GetComponent<Rigidbody> ().isKinematic = true;
-				NetworkServer.Spawn (projectile);
+				CmdMakeArrow (launchPos, launchRot);
 			}
 
 			if (Input.GetMouseButtonUp (0)) {
@@ -60,8 +56,7 @@ public class BowScript : NetworkBehaviour {
 					isDrawn = false;
 					nextShot = Time.time + coolDown;
 					canShoot = false;
-					projectile.GetComponent<Rigidbody> ().isKinematic = false;
-					projectile.GetComponent<Rigidbody> ().velocity = projectile.transform.forward * power * timeHeld;
+					CmdShootArrow (power, timeHeld);
 					timeHeld = 0;
 				}
 			}
@@ -71,11 +66,30 @@ public class BowScript : NetworkBehaviour {
 					if (timeHeld < 6)
 						timeHeld += 0.25f;
 					
-					projectile.transform.position = launchPos;
-					projectile.transform.rotation = launchRot;
+					CmdMoveArrow (launchPos, launchRot);
 					//print (timeHeld);
 				}
 			}
 		}
 	}
+
+	[Command]
+	public void CmdMakeArrow(Vector3 Pos, Quaternion Rot){
+		projectile = Instantiate (prefabProjectile, Pos, Rot) as GameObject;
+		projectile.GetComponent<Rigidbody> ().isKinematic = true;
+		NetworkServer.Spawn (projectile);
+	}
+
+	[Command]
+	public void CmdMoveArrow(Vector3 Pos, Quaternion Rot){
+		projectile.transform.position = launchPos;
+		projectile.transform.rotation = launchRot;
+	}
+
+	[Command]
+	public void CmdShootArrow(float pow, float tHeld){
+		projectile.GetComponent<Rigidbody> ().isKinematic = false;
+		projectile.GetComponent<Rigidbody> ().velocity = projectile.transform.forward * pow * tHeld;
+	}
 }
+

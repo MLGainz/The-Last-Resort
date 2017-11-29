@@ -5,8 +5,8 @@ using UnityEngine.Networking;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
-	public class HealthHunter : NetworkBehaviour {
-		[SyncVar] public float health = 100;
+	public class HealthHunter : MonoBehaviour {
+		public float health = 100;
 
 		private bool canHit = true;
 		private float hitAgain;

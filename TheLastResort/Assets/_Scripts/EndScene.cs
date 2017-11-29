@@ -6,7 +6,7 @@ public class EndScene : MonoBehaviour {
 	private NetworkManagerOverrides lobby;
 
 	void Start(){
-		lobby = FindObjectOfType<NetworkManagerOverrides> ();
+		lobby = GameObject.Find("NetworkManager").GetComponent<NetworkManagerOverrides> ();
 	}
 
 	public void EndGame(){

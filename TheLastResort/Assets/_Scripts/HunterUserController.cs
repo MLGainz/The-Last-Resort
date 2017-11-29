@@ -24,7 +24,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// get the first person character ( this should never be null due to require component )
 			m_Character = GetComponent<FirstPersonHunter>();
 
-			isDrawn = GameObject.Find("Bow").GetComponent<BowScript>().isDrawn;
+			isDrawn = GameObject.Find("Hunter(Clone)").GetComponent<BowScript>().isDrawn;
 		}
 
 
