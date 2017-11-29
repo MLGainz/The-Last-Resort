@@ -7,6 +7,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 {
 	public class HealthDeer : NetworkBehaviour {
 		[SyncVar] public float health = 100;
+		private float damageCooldown = 0;
 
 		void Update(){
 			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
@@ -16,17 +17,20 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				enabled = false;
 				NetworkServer.Destroy(transform.parent.gameObject);
 			}
-
-			//print (health);
 		}
 
 		void OnCollisionEnter(Collision col){
-			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
-				return;
+			//if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
+			//	return;
 
-			if (col.gameObject.name == "Arrow(Clone)") {
-				health -= (col.gameObject.GetComponent<Arrow> ().timeHeld * GameObject.Find("Bow").GetComponent<BowScript>().power)/(8-col.gameObject.GetComponent<Arrow> ().timeHeld);
-				//health -= col.relativeVelocity.magnitude/3;
+			if (Time.time > damageCooldown) {
+				if (col.gameObject.name == "Arrow(Clone)") {
+					print ((col.gameObject.GetComponent<Arrow> ().timeHeld * GameObject.Find ("Bow").GetComponent<BowScript> ().power) / (9 - col.gameObject.GetComponent<Arrow> ().timeHeld));
+					health -= (col.gameObject.GetComponent<Arrow> ().timeHeld * GameObject.Find ("Bow").GetComponent<BowScript> ().power) / (9 - col.gameObject.GetComponent<Arrow> ().timeHeld);
+					print (health);
+					damageCooldown = Time.time + 0.1f;
+					//health -= col.relativeVelocity.magnitude/3;
+				}
 			}
 		}
 
