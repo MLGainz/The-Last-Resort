@@ -48,7 +48,8 @@ public class BowScript : NetworkBehaviour {
 		if(canShoot){	
 			if (Input.GetMouseButtonDown (0)) {
 				isDrawn = true;
-				fakeArrow.SetActive (true);
+				//fakeArrow.SetActive (true);
+				fakeArrow.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
 				fakeArrow.transform.position = launchPos;
 				fakeArrow.transform.rotation = launchRot;
 			}
@@ -58,8 +59,10 @@ public class BowScript : NetworkBehaviour {
 					isDrawn = false;
 					nextShot = Time.time + coolDown;
 					canShoot = false;
-					fakeArrow.SetActive (false);
-					CmdShootArrow (launchPos, launchRot, power, timeHeld);
+					fakeArrow.GetComponent<Rigidbody> ().isKinematic = false;
+					fakeArrow.GetComponent<Rigidbody> ().velocity = fakeArrow.transform.forward * power * timeHeld;
+					//fakeArrow.SetActive (false);
+					//CmdShootArrow (launchPos, launchRot, power, timeHeld);
 					timeHeld = 0;
 				}
 			}
