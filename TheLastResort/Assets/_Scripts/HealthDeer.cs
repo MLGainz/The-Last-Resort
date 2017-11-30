@@ -36,7 +36,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 			if (Time.time > damageCooldown) {
 				if (col.gameObject.name == "Arrow(Clone)") {
-					//print ((col.gameObject.GetComponent<Arrow> ().timeHeld * GameObject.Find ("Bow").GetComponent<BowScript> ().power) / (9 - col.gameObject.GetComponent<Arrow> ().timeHeld));
+					print ((col.gameObject.GetComponent<Arrow> ().timeHeld));// * GameObject.Find ("Hunter(Clone)").GetComponent<BowScript> ().power) / (9 - col.gameObject.GetComponent<Arrow> ().timeHeld));
 					health -= (col.gameObject.GetComponent<Arrow> ().timeHeld * GameObject.Find ("Hunter(Clone)").GetComponent<BowScript> ().power) / (9 - col.gameObject.GetComponent<Arrow> ().timeHeld);
 					print (health);
 					damageCooldown = Time.time + 0.1f;

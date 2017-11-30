@@ -78,10 +78,10 @@ public class BowScript : NetworkBehaviour {
 
 	[Command]
 	public void CmdShootArrow(Vector3 pos, Quaternion rot, float pow, float tHeld){
-		print (launchPos);
 		GameObject projectile = Instantiate (prefabProjectile, pos, rot);
 		projectile.GetComponent<Rigidbody> ().isKinematic = false;
 		projectile.GetComponent<Rigidbody> ().velocity = projectile.transform.forward * pow * tHeld;
+		projectile.GetComponent<Arrow> ().timeHeld = tHeld;
 		NetworkServer.Spawn (projectile);
 	}
 }
