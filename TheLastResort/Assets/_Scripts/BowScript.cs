@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 public class BowScript : NetworkBehaviour {
 	//fields set in the Unity Inspector pane
 	public GameObject prefabProjectile;
+	public GameObject fakeArrow;
 	public float power = 4f;
 	public float coolDown = 1f;
 	public Texture2D crosshair;
@@ -14,8 +15,7 @@ public class BowScript : NetworkBehaviour {
 	//fields set dynamically
 	public Vector3 launchPos;
 	public Quaternion launchRot;
-	public GameObject projectile;
-	public float timeHeld = 0f;
+	[SyncVar]public float timeHeld = 0f;
 	public bool isDrawn = false;
 	public bool canShoot = false;
 	public float nextShot = 0;
@@ -48,7 +48,9 @@ public class BowScript : NetworkBehaviour {
 		if(canShoot){	
 			if (Input.GetMouseButtonDown (0)) {
 				isDrawn = true;
-				CmdMakeArrow (launchPos, launchRot);
+				fakeArrow.SetActive (true);
+				fakeArrow.transform.position = launchPos;
+				fakeArrow.transform.rotation = launchRot;
 			}
 
 			if (Input.GetMouseButtonUp (0)) {
@@ -56,7 +58,8 @@ public class BowScript : NetworkBehaviour {
 					isDrawn = false;
 					nextShot = Time.time + coolDown;
 					canShoot = false;
-					CmdShootArrow (power, timeHeld);
+					fakeArrow.SetActive (false);
+					CmdShootArrow (launchPos, launchRot, power, timeHeld);
 					timeHeld = 0;
 				}
 			}
@@ -66,30 +69,20 @@ public class BowScript : NetworkBehaviour {
 					if (timeHeld < 6)
 						timeHeld += 0.25f;
 					
-					CmdMoveArrow (launchPos, launchRot);
-					//print (timeHeld);
+					fakeArrow.transform.position = launchPos;
+					fakeArrow.transform.rotation = launchRot;
 				}
 			}
 		}
 	}
 
 	[Command]
-	public void CmdMakeArrow(Vector3 Pos, Quaternion Rot){
-		projectile = Instantiate (prefabProjectile, Pos, Rot) as GameObject;
-		projectile.GetComponent<Rigidbody> ().isKinematic = true;
-		NetworkServer.Spawn (projectile);
-	}
-
-	[Command]
-	public void CmdMoveArrow(Vector3 Pos, Quaternion Rot){
-		projectile.transform.position = launchPos;
-		projectile.transform.rotation = launchRot;
-	}
-
-	[Command]
-	public void CmdShootArrow(float pow, float tHeld){
+	public void CmdShootArrow(Vector3 pos, Quaternion rot, float pow, float tHeld){
+		print (launchPos);
+		GameObject projectile = Instantiate (prefabProjectile, pos, rot);
 		projectile.GetComponent<Rigidbody> ().isKinematic = false;
 		projectile.GetComponent<Rigidbody> ().velocity = projectile.transform.forward * pow * tHeld;
+		NetworkServer.Spawn (projectile);
 	}
 }
 

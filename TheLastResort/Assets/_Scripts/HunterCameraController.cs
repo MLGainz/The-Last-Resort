@@ -67,7 +67,7 @@ public class HunterCameraController : MonoBehaviour {
 		paused = true;
 		canPause = false;
 		nextPause = Time.time + pauseDelay;
-		Cursor.lockState = CursorLockMode.Confined;
+		Cursor.lockState = CursorLockMode.None;
 		GameObject.Find("NetworkManager").GetComponent<NetworkManagerHUD> ().enabled = true;
 	}
 
