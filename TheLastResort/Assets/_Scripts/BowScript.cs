@@ -51,9 +51,12 @@ public class BowScript : NetworkBehaviour {
 			if (Input.GetMouseButtonDown (0)) {
 				isDrawn = true;
 <<<<<<< HEAD
+<<<<<<< HEAD
 				//fakeArrow.SetActive (true);
 				fakeProjectile = Instantiate (prefabFakeProjectile, launchPos, launchRot);
 =======
+=======
+>>>>>>> parent of 8a5f90d7... Stuff
 				fakeArrow.SetActive (true);
 				fakeArrow.transform.position = launchPos;
 				fakeArrow.transform.rotation = launchRot;
@@ -66,10 +69,15 @@ public class BowScript : NetworkBehaviour {
 					nextShot = Time.time + coolDown;
 					canShoot = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
 					fakeProjectile.GetComponent<Rigidbody> ().isKinematic = false;
 					fakeProjectile.GetComponent<Rigidbody> ().velocity = fakeProjectile.transform.forward * power * timeHeld;
 					//fakeArrow.SetActive (false);
 					//CmdShootArrow (launchPos, launchRot, power, timeHeld);
+=======
+					fakeArrow.SetActive (false);
+					CmdShootArrow (launchPos, launchRot, power, timeHeld);
+>>>>>>> parent of 8a5f90d7... Stuff
 =======
 					fakeArrow.SetActive (false);
 					CmdShootArrow (launchPos, launchRot, power, timeHeld);
