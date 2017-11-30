@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 public class BowScript : NetworkBehaviour {
 	//fields set in the Unity Inspector pane
 	public GameObject prefabProjectile;
-	public GameObject fakeArrow;
+	public GameObject prefabFakeProjectile;
 	public float power = 4f;
 	public float coolDown = 1f;
 	public Texture2D crosshair;
@@ -20,6 +20,8 @@ public class BowScript : NetworkBehaviour {
 	public bool canShoot = false;
 	public float nextShot = 0;
 	Transform launchPointTrans;
+
+	private GameObject fakeProjectile;
 
 	void OnGUI()
 	{
@@ -49,9 +51,7 @@ public class BowScript : NetworkBehaviour {
 			if (Input.GetMouseButtonDown (0)) {
 				isDrawn = true;
 				//fakeArrow.SetActive (true);
-				fakeArrow.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
-				fakeArrow.transform.position = launchPos;
-				fakeArrow.transform.rotation = launchRot;
+				fakeProjectile = Instantiate (prefabFakeProjectile, launchPos, launchRot);
 			}
 
 			if (Input.GetMouseButtonUp (0)) {
@@ -59,8 +59,8 @@ public class BowScript : NetworkBehaviour {
 					isDrawn = false;
 					nextShot = Time.time + coolDown;
 					canShoot = false;
-					fakeArrow.GetComponent<Rigidbody> ().isKinematic = false;
-					fakeArrow.GetComponent<Rigidbody> ().velocity = fakeArrow.transform.forward * power * timeHeld;
+					fakeProjectile.GetComponent<Rigidbody> ().isKinematic = false;
+					fakeProjectile.GetComponent<Rigidbody> ().velocity = fakeProjectile.transform.forward * power * timeHeld;
 					//fakeArrow.SetActive (false);
 					//CmdShootArrow (launchPos, launchRot, power, timeHeld);
 					timeHeld = 0;
@@ -72,8 +72,8 @@ public class BowScript : NetworkBehaviour {
 					if (timeHeld < 6)
 						timeHeld += 0.25f;
 					
-					fakeArrow.transform.position = launchPos;
-					fakeArrow.transform.rotation = launchRot;
+					fakeProjectile.transform.position = launchPos;
+					fakeProjectile.transform.rotation = launchRot;
 				}
 			}
 		}
