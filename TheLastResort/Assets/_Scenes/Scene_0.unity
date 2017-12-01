@@ -17952,6 +17952,16 @@ Prefab:
       propertyPath: m_IgnoreReversedGraphics
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114157961823239134, guid: 5915548140b9da349b4f73ccaf56f856,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114934342278962508, guid: 5915548140b9da349b4f73ccaf56f856,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5915548140b9da349b4f73ccaf56f856, type: 2}
   m_IsPrefabParent: 0
