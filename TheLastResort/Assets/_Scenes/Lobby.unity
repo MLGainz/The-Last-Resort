@@ -3375,12 +3375,12 @@ MonoBehaviour:
   m_MinPlayers: 1
   m_LobbyPlayerPrefab: {fileID: 114359774795084950, guid: b70c56c7ceb857c4f9c73d7f4918b92f,
     type: 2}
-  m_GamePlayerPrefab: {fileID: 1633788699060552, guid: 294dbae3d8bbf0f43beeab129ef841a5,
+  m_GamePlayerPrefab: {fileID: 1455526463812822, guid: 294dbae3d8bbf0f43beeab129ef841a5,
     type: 2}
   m_LobbyScene: Lobby
   m_PlayScene: Scene_0
   lobbySlots: []
-  m_PlayerPrefab1: {fileID: 1633788699060552, guid: 294dbae3d8bbf0f43beeab129ef841a5,
+  m_PlayerPrefab1: {fileID: 1455526463812822, guid: 294dbae3d8bbf0f43beeab129ef841a5,
     type: 2}
   m_PlayerPrefab2: {fileID: 1890426589039762, guid: 472c2101e9170954c8d84c7a32e9a81d,
     type: 2}

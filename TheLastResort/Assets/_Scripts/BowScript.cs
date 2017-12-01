@@ -11,7 +11,7 @@ public class BowScript : NetworkBehaviour {
 	public float coolDown = 1f;
 	public Texture2D crosshair;
 	public bool _____________;
-	
+
 	//fields set dynamically
 	public Vector3 launchPos;
 	public Quaternion launchRot;
@@ -27,7 +27,7 @@ public class BowScript : NetworkBehaviour {
 	{
 		if (!gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
 			return;
-		
+
 		float xMin = (Screen.width / 2) - 22;
 		float yMin = (Screen.height / 2) - 20;
 		GUI.DrawTexture(new Rect(xMin, yMin, 50, 50), crosshair);
@@ -50,17 +50,8 @@ public class BowScript : NetworkBehaviour {
 		if(canShoot){	
 			if (Input.GetMouseButtonDown (0)) {
 				isDrawn = true;
-<<<<<<< HEAD
-<<<<<<< HEAD
 				//fakeArrow.SetActive (true);
 				fakeProjectile = Instantiate (prefabFakeProjectile, launchPos, launchRot);
-=======
-=======
->>>>>>> parent of 8a5f90d7... Stuff
-				fakeArrow.SetActive (true);
-				fakeArrow.transform.position = launchPos;
-				fakeArrow.transform.rotation = launchRot;
->>>>>>> parent of 8a5f90d7... Stuff
 			}
 
 			if (Input.GetMouseButtonUp (0)) {
@@ -68,29 +59,19 @@ public class BowScript : NetworkBehaviour {
 					isDrawn = false;
 					nextShot = Time.time + coolDown;
 					canShoot = false;
-<<<<<<< HEAD
-<<<<<<< HEAD
 					fakeProjectile.GetComponent<Rigidbody> ().isKinematic = false;
 					fakeProjectile.GetComponent<Rigidbody> ().velocity = fakeProjectile.transform.forward * power * timeHeld;
 					//fakeArrow.SetActive (false);
 					//CmdShootArrow (launchPos, launchRot, power, timeHeld);
-=======
-					fakeArrow.SetActive (false);
-					CmdShootArrow (launchPos, launchRot, power, timeHeld);
->>>>>>> parent of 8a5f90d7... Stuff
-=======
-					fakeArrow.SetActive (false);
-					CmdShootArrow (launchPos, launchRot, power, timeHeld);
->>>>>>> parent of 8a5f90d7... Stuff
 					timeHeld = 0;
 				}
 			}
-	  		
+
 			if (Input.GetMouseButton (0)) {
 				if (isDrawn) {
 					if (timeHeld < 6)
 						timeHeld += 0.25f;
-					
+
 					fakeProjectile.transform.position = launchPos;
 					fakeProjectile.transform.rotation = launchRot;
 				}
