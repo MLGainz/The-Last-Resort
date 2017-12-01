@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class HunterCameraController : MonoBehaviour {
 
@@ -11,6 +12,12 @@ public class HunterCameraController : MonoBehaviour {
 	public float rotateSpeed = 5;
 	public bool paused = false;
 	public float pauseDelay = 0.25f;
+    //public Text MainText;
+    //public Text EText;
+    public Button MainButton;
+    public Button EButton;
+    public Canvas PCanvas;
+
 
 	private float pitch = 0.0f;
 	private float bowY = 0;
@@ -26,6 +33,21 @@ public class HunterCameraController : MonoBehaviour {
         camOffset = transform.position - focus.transform.position;
 		bowOffset = transform.position - bow.transform.position;
 		origBowOffset = bowOffset;
+
+        //MainButton = GameObject.Find("MainMenuButton").GetComponent<Button>();
+        //EButton = GameObject.Find("ExitButton").GetComponent<Button>();
+        MainButton = MainButton.GetComponent<Button>();
+        EButton = EButton.GetComponent<Button>();
+        PCanvas = GameObject.Find("PauseCanvas").GetComponent<Canvas>();
+
+        //MainText = GameObject.Find("MainMenuText").GetComponent<Text>();
+        //EText = GameObject.Find("ExitText").GetComponent<Text>();
+        MainButton.enabled = false;
+        EButton.enabled = false;
+        PCanvas.enabled = false;
+
+        //MainText.enabled = false;
+        //EText.enabled = false;
     }
 
     void LateUpdate()
@@ -69,6 +91,14 @@ public class HunterCameraController : MonoBehaviour {
 		nextPause = Time.time + pauseDelay;
 		Cursor.lockState = CursorLockMode.None;
 		GameObject.Find("NetworkManager").GetComponent<NetworkManagerHUD> ().enabled = true;
+
+
+        MainButton.enabled = true;
+        EButton.enabled = true;
+        PCanvas.enabled = true;
+
+        //MainText.enabled = true;
+        //EText.enabled = true;
 	}
 
 	public void UnPause(){
@@ -77,5 +107,12 @@ public class HunterCameraController : MonoBehaviour {
 		nextPause = Time.time + pauseDelay;
 		Cursor.lockState = CursorLockMode.Locked;
 		GameObject.Find("NetworkManager").GetComponent<NetworkManagerHUD> ().enabled = false;
+
+        MainButton.enabled = false;
+        EButton.enabled = false;
+        PCanvas.enabled = false;
+
+        //MainText.enabled = false;
+        //EText.enabled = false;
 	}
 }
