@@ -31,9 +31,11 @@ public class PauseMenuScript : MonoBehaviour {
     public void GoToMainMenu()
     {
         GameObject.Find("NetworkManager").GetComponent<NetworkManagerHUD>().enabled = false;
-        //NetworkManager.Shutdown();
-        SceneManager.LoadScene("Start_Menu_Scene");
 
+        //NetworkManager.Shutdown();
+        NetworkServer.Reset();
+        SceneManager.LoadScene("Start_Menu_Scene");
+       
         //Network.Disconnect();
         //MasterServer.UnregisterHost();
     }
