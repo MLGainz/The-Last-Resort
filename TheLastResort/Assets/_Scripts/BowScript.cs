@@ -62,7 +62,7 @@ public class BowScript : NetworkBehaviour {
 					fakeProjectile.GetComponent<Rigidbody> ().isKinematic = false;
 					fakeProjectile.GetComponent<Rigidbody> ().velocity = fakeProjectile.transform.forward * power * timeHeld;
 					//fakeArrow.SetActive (false);
-					//CmdShootArrow (launchPos, launchRot, power, timeHeld);
+					CmdShootArrow (launchPos, launchRot, power, timeHeld);
 					timeHeld = 0;
 				}
 			}
