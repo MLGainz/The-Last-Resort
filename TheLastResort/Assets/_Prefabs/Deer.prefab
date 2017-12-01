@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 81203551644417400}
   - component: {fileID: 45256109557202930}
   - component: {fileID: 114576615758798838}
+  - component: {fileID: 114748736975931664}
   m_Layer: 0
   m_Name: DeerCamera
   m_TagString: Untagged
@@ -1068,6 +1069,10 @@ MonoBehaviour:
   rotateSpeed: 3
   paused: 0
   pauseDelay: 0.25
+  MainButton: {fileID: 114157961823239134, guid: 5915548140b9da349b4f73ccaf56f856,
+    type: 2}
+  EButton: {fileID: 114934342278962508, guid: 5915548140b9da349b4f73ccaf56f856, type: 2}
+  PCanvas: {fileID: 223332413269665656, guid: 5915548140b9da349b4f73ccaf56f856, type: 2}
 --- !u!114 &114625805009617288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1125,6 +1130,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+--- !u!114 &114748736975931664
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1072781052037250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e58e1ce7ad91be42a57ab44856439da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainMenuButton: {fileID: 114157961823239134, guid: 5915548140b9da349b4f73ccaf56f856,
+    type: 2}
+  ExitButton: {fileID: 114934342278962508, guid: 5915548140b9da349b4f73ccaf56f856,
+    type: 2}
+  PauseCanvas: {fileID: 223332413269665656, guid: 5915548140b9da349b4f73ccaf56f856,
+    type: 2}
 --- !u!114 &114895154999901074
 MonoBehaviour:
   m_ObjectHideFlags: 1

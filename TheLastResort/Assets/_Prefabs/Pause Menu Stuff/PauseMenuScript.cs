@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
+
 
 public class PauseMenuScript : MonoBehaviour {
 
@@ -28,7 +30,11 @@ public class PauseMenuScript : MonoBehaviour {
 
     public void GoToMainMenu()
     {
+        NetworkManager.Shutdown();
         SceneManager.LoadScene("Start_Menu_Scene");
+
+        //Network.Disconnect();
+        //MasterServer.UnregisterHost();
     }
 
     public void ExitGame()

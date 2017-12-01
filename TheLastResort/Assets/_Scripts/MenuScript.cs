@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
+
 
 public class MenuScript : MonoBehaviour {
 
@@ -21,6 +23,7 @@ public class MenuScript : MonoBehaviour {
 
         quitMenu = quitMenu.GetComponent<Canvas>();
         startOnlineText = startOnlineText.GetComponent<Button>();
+        quitMenu.enabled = false;
         
 
         //startHunterText = startHunterText.GetComponent<Button>();
@@ -30,7 +33,7 @@ public class MenuScript : MonoBehaviour {
         //startDeerText.enabled = false;
        
         
-        quitMenu.enabled = false;
+        
 
 		
 	}

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class DeerCameraController : MonoBehaviour {
 
@@ -10,8 +11,11 @@ public class DeerCameraController : MonoBehaviour {
 	public float rotateSpeed = 3;
 	public bool paused = false;
 	public float pauseDelay = 0.25f;
+    public Button MainButton;
+    public Button EButton;
+    public Canvas PCanvas;
 
-	private float pitch = 0.0f;
+    private float pitch = 0.0f;
 	private float nextPause;
 	private bool canPause = true;
     private Vector3 camOffset;
@@ -20,7 +24,15 @@ public class DeerCameraController : MonoBehaviour {
     {
 		UnPause();
         camOffset = transform.position - focus.transform.position;
-		//camOffset = new Vector3(1,1,1);
+        //camOffset = new Vector3(1,1,1);
+
+        MainButton = MainButton.GetComponent<Button>();
+        EButton = EButton.GetComponent<Button>();
+        PCanvas = GameObject.Find("PauseCanvas").GetComponent<Canvas>();
+
+        MainButton.enabled = false;
+        EButton.enabled = false;
+        PCanvas.enabled = false;
     }
 
     void LateUpdate()
@@ -59,7 +71,11 @@ public class DeerCameraController : MonoBehaviour {
 		nextPause = Time.time + pauseDelay;
 		Cursor.lockState = CursorLockMode.Confined;
 		GameObject.Find("NetworkManager").GetComponent<NetworkManagerHUD> ().enabled = true;
-	}
+
+        MainButton.enabled = true;
+        EButton.enabled = true;
+        PCanvas.enabled = true;
+    }
 
 	public void UnPause(){
 		paused = false;
@@ -67,5 +83,9 @@ public class DeerCameraController : MonoBehaviour {
 		nextPause = Time.time + pauseDelay;
 		Cursor.lockState = CursorLockMode.Locked;
 		GameObject.Find("NetworkManager").GetComponent<NetworkManagerHUD> ().enabled = false;
-	}
+
+        MainButton.enabled = false;
+        EButton.enabled = false;
+        PCanvas.enabled = false;
+    }
 }
