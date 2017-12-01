@@ -1,10 +1,16 @@
 fileFormatVersion: 2
 guid: 2e58e1ce7ad91be42a57ab44856439da
-timeCreated: 1512136434
+timeCreated: 1512147961
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - MainMenuButton: {fileID: 114157961823239134, guid: 5915548140b9da349b4f73ccaf56f856,
+      type: 2}
+  - ExitButton: {fileID: 114934342278962508, guid: 5915548140b9da349b4f73ccaf56f856,
+      type: 2}
+  - PauseCanvas: {fileID: 223332413269665656, guid: 5915548140b9da349b4f73ccaf56f856,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
