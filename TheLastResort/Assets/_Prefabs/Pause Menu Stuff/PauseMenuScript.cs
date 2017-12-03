@@ -11,11 +11,13 @@ public class PauseMenuScript : MonoBehaviour {
     public Button MainMenuButton;
     public Button ExitButton;
     public Canvas PauseCanvas;
+	private NetworkManagerOverrides lobby;
     //public Text MainMenuText;
     //ublic Text ExitText;
 	// Use this for initialization
 	void Start () {
 
+		lobby = GameObject.Find("NetworkManager").GetComponent<NetworkManagerOverrides> ();
         MainMenuButton = MainMenuButton.GetComponent<Button>();
         ExitButton = ExitButton.GetComponent<Button>();
         PauseCanvas = PauseCanvas.GetComponent<Canvas>();
@@ -30,11 +32,11 @@ public class PauseMenuScript : MonoBehaviour {
 
     public void GoToMainMenu()
     {
-        GameObject.Find("NetworkManager").GetComponent<NetworkManagerHUD>().enabled = false;
-
+		EndScene stop = FindObjectOfType<EndScene> ();
+		stop.EndGame();
         //NetworkManager.Shutdown();
-        NetworkServer.Reset();
-        SceneManager.LoadScene("Start_Menu_Scene");
+        //NetworkServer.Reset();
+        //SceneManager.LoadScene("Start_Menu_Scene");
        
         //Network.Disconnect();
         //MasterServer.UnregisterHost();

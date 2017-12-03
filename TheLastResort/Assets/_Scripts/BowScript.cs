@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 
 public class BowScript : NetworkBehaviour {
 	//fields set in the Unity Inspector pane
+	public GameObject propArrow;
 	public GameObject prefabProjectile;
 	public GameObject prefabFakeProjectile;
 	public float power = 4f;
@@ -50,8 +51,8 @@ public class BowScript : NetworkBehaviour {
 		if(canShoot){	
 			if (Input.GetMouseButtonDown (0)) {
 				isDrawn = true;
-				//fakeArrow.SetActive (true);
-				fakeProjectile = Instantiate (prefabFakeProjectile, launchPos, launchRot);
+				propArrow.SetActive (true);
+
 			}
 
 			if (Input.GetMouseButtonUp (0)) {
@@ -59,9 +60,10 @@ public class BowScript : NetworkBehaviour {
 					isDrawn = false;
 					nextShot = Time.time + coolDown;
 					canShoot = false;
+					propArrow.SetActive (false);
+					fakeProjectile = Instantiate (prefabFakeProjectile, launchPos, launchRot);
 					fakeProjectile.GetComponent<Rigidbody> ().isKinematic = false;
 					fakeProjectile.GetComponent<Rigidbody> ().velocity = fakeProjectile.transform.forward * power * timeHeld;
-					//fakeArrow.SetActive (false);
 					CmdShootArrow (launchPos, launchRot, power, timeHeld);
 					timeHeld = 0;
 				}
@@ -72,8 +74,8 @@ public class BowScript : NetworkBehaviour {
 					if (timeHeld < 6)
 						timeHeld += 0.25f;
 
-					fakeProjectile.transform.position = launchPos;
-					fakeProjectile.transform.rotation = launchRot;
+					propArrow.transform.position = launchPos;
+					propArrow.transform.rotation = launchRot;
 				}
 			}
 		}
@@ -86,6 +88,8 @@ public class BowScript : NetworkBehaviour {
 		projectile.GetComponent<Rigidbody> ().velocity = projectile.transform.forward * pow * tHeld;
 		projectile.GetComponent<Arrow> ().timeHeld = tHeld;
 		NetworkServer.Spawn (projectile);
+
+
 	}
 }
 

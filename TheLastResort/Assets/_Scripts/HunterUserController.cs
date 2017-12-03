@@ -20,7 +20,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		private void Start()
 		{
 			m_Cam = cam.transform;
-
+			cam.cullingMask &= ~(1 << 15);
 			// get the first person character ( this should never be null due to require component )
 			m_Character = GetComponent<FirstPersonHunter>();
 
