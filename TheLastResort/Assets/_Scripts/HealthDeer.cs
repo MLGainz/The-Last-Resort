@@ -37,6 +37,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 			if (GameObject.Find ("NetworkManager").GetComponent<NetworkManagerOverrides> ().deer == 0) {
 				EndScene stop = FindObjectOfType<EndScene>(); 
+				Timer winner = FindObjectOfType<Timer> ();
+				winner.winText.text = "The Hunter Wins";
 				stop.EndGame();
 			}
 

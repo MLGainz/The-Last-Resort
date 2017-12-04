@@ -35,6 +35,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 			if (health <= 0) {
 				EndScene stop = FindObjectOfType<EndScene>(); 
+				Timer winner = FindObjectOfType<Timer> ();
+				winner.winText.text = "The Deer Win";
 				stop.EndGame();
 			}
 

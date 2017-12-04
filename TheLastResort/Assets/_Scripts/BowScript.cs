@@ -66,7 +66,7 @@ public class BowScript : NetworkBehaviour {
 		if (GameObject.Find ("HunterCamera").GetComponent<HunterCameraController> ().paused)
 			canShoot = false;
 
-		launchPointTrans = GameObject.Find("Bow").transform.Find ("Middle");
+		launchPointTrans = GameObject.Find("Bow").transform.Find ("arrowStart");
 		launchPos = launchPointTrans.position;
 		launchRot = launchPointTrans.rotation;
 
@@ -96,8 +96,8 @@ public class BowScript : NetworkBehaviour {
 				if (isDrawn) {
 					if (timeHeld < 6)
 						timeHeld += 0.25f;
-
-					propArrow.transform.position = launchPos;
+					print (launchRot);
+					propArrow.transform.position = launchPos - (launchRot * ((timeHeld/8)*new Vector3(0,0,1)));// new Vector3(launchRot.y, launchRot.x, launchRot.y) * timeHeld;
 					propArrow.transform.rotation = launchRot;
 				}
 			}

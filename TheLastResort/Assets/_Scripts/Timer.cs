@@ -26,6 +26,7 @@ public class Timer : NetworkBehaviour {
 			minutes = (int)(timeLeft / 60);
 			seconds = (int)(timeLeft % 60);
 		} else {
+			winText.text = "The Deer Win";
 			EndScene stop = FindObjectOfType<EndScene>(); 
 			stop.EndGame();
 		}

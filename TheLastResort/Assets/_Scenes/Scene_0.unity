@@ -7737,7 +7737,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.25
+  m_Intensity: 0.15
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -7787,6 +7787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88bf64507a7e6294cb5f954cad92b0d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endGameDelay: 5
 --- !u!4 &801978561 stripped
 Transform:
   m_PrefabParentObject: {fileID: 445910, guid: c63ea781a273235439e583799176c846, type: 2}

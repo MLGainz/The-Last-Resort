@@ -4,24 +4,37 @@ using UnityEngine;
 
 public class EndScene : MonoBehaviour {
 	private NetworkManagerOverrides lobby;
+	public float endGameDelay = 5;
+	private float endGame = 0;
 
 	void Start(){
 		lobby = GameObject.Find("NetworkManager").GetComponent<NetworkManagerOverrides> ();
 	}
 
+	void Update(){
+		if (endGame != 0)
+			if (Time.time >= endGame)
+				EndGame ();
+	}
+
 	public void EndGame(){
-		GameObject Hunter = GameObject.Find("Hunter(Clone)");
-		GameObject [] Deer = GameObject.FindGameObjectsWithTag("Deer");
+		if (endGame != 0) {
+			//GameObject Hunter = GameObject.Find("Hunter(Clone)");
+			//GameObject [] Deer = GameObject.FindGameObjectsWithTag("Deer");
 
-		for (int i = 0; i < Deer.Length; i++)
-			Deer [i].SetActive(false);
-		
-		Hunter.SetActive(false);
+			//for (int i = 0; i < Deer.Length; i++)
+			//	Deer [i].SetActive(false);
+			
+			//Hunter.SetActive(false);
 
-		Cursor.lockState = CursorLockMode.None;
+			Cursor.lockState = CursorLockMode.None;
 
-		lobby.deer = 0;
-		lobby.isHunter = false;
-		lobby.SendReturnToLobby ();
+			endGame = 0;
+			lobby.deer = 0;
+			lobby.isHunter = false;
+			lobby.SendReturnToLobby ();
+		} else {
+			endGame = Time.time + endGameDelay;
+		}
 	}
 }
