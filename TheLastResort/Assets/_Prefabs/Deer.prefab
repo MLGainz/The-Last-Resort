@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 92932216105215866}
   - component: {fileID: 124604826315295256}
   - component: {fileID: 81203551644417400}
-  - component: {fileID: 45256109557202930}
   - component: {fileID: 114576615758798838}
   - component: {fileID: 114748736975931664}
   m_Layer: 0
@@ -48,6 +47,7 @@ GameObject:
   - component: {fileID: 114172119505380792}
   - component: {fileID: 114685445092154320}
   - component: {fileID: 114733052901219050}
+  - component: {fileID: 82708849807996026}
   m_Layer: 12
   m_Name: DeerBody
   m_TagString: Untagged
@@ -817,14 +817,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1799169550544708}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!45 &45256109557202930
-Skybox:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1072781052037250}
-  m_Enabled: 1
-  m_CustomSkybox: {fileID: 2100000, guid: 4067de1a02072244798361060c5e7325, type: 2}
 --- !u!54 &54060627336546714
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -942,7 +934,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1072781052037250}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!81 &81878017047441482
 AudioListener:
   m_ObjectHideFlags: 1
@@ -950,6 +942,86 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1940192949631972}
   m_Enabled: 0
+--- !u!82 &82708849807996026
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1095788978139336}
+  m_Enabled: 0
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: cd6d054e56c328d4a8b62c6fb083ed7f, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 25
+  MaxDistance: 75
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!92 &92631800801088980
 Behaviour:
   m_ObjectHideFlags: 1
@@ -1014,6 +1086,7 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 2.75
   m_AnimSpeedMultiplier: 2.75
   m_GroundCheckDistance: 3.5
+  m_IsGrounded: 0
   cam: {fileID: 20902986256897150}
   miniCam: {fileID: 20190941903441190}
 --- !u!114 &114369114298778812
@@ -1130,6 +1203,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  ac_land: {fileID: 8300000, guid: cd6d054e56c328d4a8b62c6fb083ed7f, type: 3}
+  ac_water: {fileID: 8300000, guid: afb32e35223dd0b4782e9ff2e724cf0a, type: 3}
+  ac_splash: {fileID: 8300000, guid: 90f39152da64258449bff6e647f6f1a5, type: 3}
 --- !u!114 &114748736975931664
 MonoBehaviour:
   m_ObjectHideFlags: 1

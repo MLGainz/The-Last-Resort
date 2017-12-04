@@ -15,6 +15,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
 		private bool isDrawn;
 		public Camera cam;
+		public bool crouch;
+		public bool sprint;
 
 
 		private void Start()
@@ -49,8 +51,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// read inputs
 			float h = CrossPlatformInputManager.GetAxis("Horizontal");
 			float v = CrossPlatformInputManager.GetAxis("Vertical");
-			bool crouch = Input.GetKey(KeyCode.LeftControl);
-			bool sprint = Input.GetKey (KeyCode.LeftShift);
+			crouch = Input.GetKey(KeyCode.LeftControl);
+			sprint = Input.GetKey (KeyCode.LeftShift);
 
 			// calculate move direction to pass to character
 			if (m_Cam != null)

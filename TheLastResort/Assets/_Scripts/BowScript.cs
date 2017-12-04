@@ -10,7 +10,8 @@ public class BowScript : NetworkBehaviour {
 	public GameObject prefabFakeProjectile;
 	public float power = 4f;
 	public float coolDown = 1f;
-	public Texture2D crosshair;
+	public Texture2D crosshairNormal;
+	public Texture2D crosshairHit;
 	public bool _____________;
 
 	//fields set dynamically
@@ -19,10 +20,19 @@ public class BowScript : NetworkBehaviour {
 	[SyncVar]public float timeHeld = 0f;
 	public bool isDrawn = false;
 	public bool canShoot = false;
+	[SyncVar]public bool deerHit = false;
 	public float nextShot = 0;
+	public float hitMarkerTime;
 	Transform launchPointTrans;
 
+	private Texture2D crosshair;
 	private GameObject fakeProjectile;
+	private AudioSource audio;
+
+	void Start(){
+		crosshair = crosshairNormal;
+		audio = this.GetComponent<AudioSource> ();
+	}
 
 	void OnGUI()
 	{
@@ -31,12 +41,24 @@ public class BowScript : NetworkBehaviour {
 
 		float xMin = (Screen.width / 2) - 22;
 		float yMin = (Screen.height / 2) - 20;
-		GUI.DrawTexture(new Rect(xMin, yMin, 50, 50), crosshair);
+		GUI.DrawTexture (new Rect (xMin, yMin, 50, 50), crosshair);
 	}
 
 	void LateUpdate(){
 		if (!gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
 			return;
+
+		if (deerHit && crosshair != crosshairHit) {
+			crosshair = crosshairHit;
+			hitMarkerTime = Time.time + 0.25f;
+		}
+
+		if (!deerHit && crosshair != crosshairNormal) {
+			crosshair = crosshairNormal;
+		}
+
+		if (Time.time >= hitMarkerTime)
+			deerHit = false;
 
 		if (Time.time >= nextShot)
 			canShoot = true;
@@ -57,6 +79,7 @@ public class BowScript : NetworkBehaviour {
 
 			if (Input.GetMouseButtonUp (0)) {
 				if (isDrawn) {
+					audio.Play ();
 					isDrawn = false;
 					nextShot = Time.time + coolDown;
 					canShoot = false;

@@ -56,6 +56,20 @@ public class NetworkManagerOverrides : NetworkLobbyManager {
 		}
 	}
 
+	public override void OnStopHost ()
+	{
+		deer = 0;
+		isHunter = false;
+		base.OnStopHost ();
+	}
+
+	public override void OnStopClient ()
+	{
+		deer = 0;
+		isHunter = false;
+		base.OnStopClient ();
+	}
+
 	public override GameObject OnLobbyServerCreateGamePlayer (NetworkConnection conn, short playerControllerId){
 		GameObject player = new GameObject();
 		Transform startPos = GetStartPosition();
