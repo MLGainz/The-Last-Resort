@@ -97,7 +97,7 @@ public class BowScript : NetworkBehaviour {
 					if (timeHeld < 6)
 						timeHeld += 0.25f;
 					print (launchRot);
-					propArrow.transform.position = launchPos - (launchRot * ((timeHeld/8)*new Vector3(0,0,1)));// new Vector3(launchRot.y, launchRot.x, launchRot.y) * timeHeld;
+					propArrow.transform.position = launchPos - (launchRot * ((timeHeld/8)*new Vector3(0,0,1)));
 					propArrow.transform.rotation = launchRot;
 				}
 			}

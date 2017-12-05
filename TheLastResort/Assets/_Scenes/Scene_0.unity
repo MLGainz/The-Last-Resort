@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13559267, g: 0.14969161, b: 0.16211069, a: 1}
+  m_IndirectSpecularColor: {r: 0.1357679, g: 0.1496805, b: 0.16221637, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -7737,7 +7737,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 0.3
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -11318,8 +11318,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minutes: 5
+  winner: 
   timer: {fileID: 1283910392}
   winText: {fileID: 959803204}
+  timeLeft: 0
 --- !u!1001 &1286185954
 Prefab:
   m_ObjectHideFlags: 0

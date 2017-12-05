@@ -25,6 +25,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		const float k_Half = 0.5f;
 		float m_TurnAmount;
 		float m_ForwardAmount;
+		float m_SideAmount;
 		Vector3 m_GroundNormal;
 		float m_CapsuleHeight;
 		Vector3 m_CapsuleCenter;
@@ -34,9 +35,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		public Camera cam;
 		public Camera miniCam;
 		private float airDist = 0;
+		private float airTime = 1;
+		private Quaternion rot;
 
 		void Start()
 		{
+			rot = this.gameObject.transform.rotation;
 			m_Animator = GetComponent<Animator>();
 			m_Rigidbody = GetComponent<Rigidbody>();
 			m_Capsule = GetComponent<CapsuleCollider>();
@@ -76,12 +80,19 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// turn amount and forward amount required to head in the desired
 			// direction.
 			//if (move.magnitude > 1f) move.Normalize();
-			move = transform.InverseTransformDirection (move);
+			//move = transform.InverseTransformDirection (move);
 			CheckGroundStatus ();
-			move = Vector3.ProjectOnPlane (move, m_GroundNormal);
+			//move = Vector3.ProjectOnPlane (move, m_GroundNormal);
 			//m_TurnAmount = Mathf.Atan2(move.x, move.z);
-			m_ForwardAmount = move.z;
+			//m_ForwardAmount = move.z;
+			//m_SideAmount = move.x;
 
+			if (m_IsGrounded) {
+				this.gameObject.transform.position = this.gameObject.transform.position + rot * new Vector3 (move.x / 1.25f, 0, move.z / 1.25f);
+			} else {
+				this.gameObject.transform.position = this.gameObject.transform.position + rot * new Vector3 (move.x / (1.25f * airTime), 0, move.z / (1.25f * airTime));
+			}
+			
 			//ApplyExtraTurnRotation();
 
 			// control and velocity handling is different when grounded and airborne:
@@ -194,6 +205,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
 				return;
 			
+			airTime += 0.015f;
+			
 			// apply extra gravity from multiplier:
 			Vector3 extraGravityForce = (Physics.gravity * m_GravityMultiplier) - Physics.gravity;
 			m_Rigidbody.AddForce(extraGravityForce);
@@ -206,6 +219,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		{
 			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
 				return;
+
+			airTime = 1;
 
 			// check whether conditions are right to allow a jump:
 			if (jump && !crouch && m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))

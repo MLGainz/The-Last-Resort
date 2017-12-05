@@ -16,11 +16,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		private AudioSource audio; 
 		private HunterUserController user;
 		private FirstPersonHunter hunter;
+		private Timer timer;
 
 		void Start(){
 			audio = this.GetComponent<AudioSource> ();
 			user = this.GetComponent<HunterUserController> ();
 			hunter = this.GetComponent<FirstPersonHunter> ();
+			timer = FindObjectOfType<Timer> ();
 		}
 
 		void Update(){
@@ -36,7 +38,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			if (health <= 0) {
 				EndScene stop = FindObjectOfType<EndScene>(); 
 				Timer winner = FindObjectOfType<Timer> ();
-				winner.winText.text = "The Deer Win";
+				winner.winner = "The Deer Win";
 				stop.EndGame();
 			}
 
@@ -130,11 +132,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 		*/
 		public void FallDamage(float airDist){
-			if (airDist < 40) {
-				health -= airDist * 1.5f;
-			} else {
-				health = 0;
-			}
+			if(timer.timeLeft <= 295)
+				if (airDist < 40) {
+					health -= airDist * 1.5f;
+				} else {
+					health = 0;
+				}
 		}
 	}
 }

@@ -68,7 +68,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 
 			// walk speed multiplier
-			if (Input.GetMouseButton(0) && !crouch) 
+			if (Input.GetMouseButton(0) || crouch) 
 				m_Move *= 0.5f;
 			if (sprint && !crouch && !Input.GetMouseButton (0))
 				m_Move *= 1.5f;

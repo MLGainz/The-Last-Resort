@@ -8,7 +8,7 @@ public class NetworkManagerOverrides : NetworkLobbyManager {
 	[SerializeField] GameObject m_PlayerPrefab1;
 	[SerializeField] GameObject m_PlayerPrefab2;
 	public bool isHunter = false;
-	public int deer = 0;
+	public int deer = 1;
 
 	void Awake(){
 		ClientScene.RegisterPrefab(m_PlayerPrefab1);
@@ -32,7 +32,7 @@ public class NetworkManagerOverrides : NetworkLobbyManager {
 
 
 	void CallOnClientEnterLobby(){
-		deer = 0;
+		deer = 1;
 		isHunter = false;
 
 		OnLobbyClientEnter ();
@@ -58,14 +58,14 @@ public class NetworkManagerOverrides : NetworkLobbyManager {
 
 	public override void OnStopHost ()
 	{
-		deer = 0;
+		deer = 1;
 		isHunter = false;
 		base.OnStopHost ();
 	}
 
 	public override void OnStopClient ()
 	{
-		deer = 0;
+		deer = 1;
 		isHunter = false;
 		base.OnStopClient ();
 	}

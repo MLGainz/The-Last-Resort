@@ -15,11 +15,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		private AudioSource audio; 
 		private DeerUserController user;
 		private FirstPersonDeer deer;
+		private Timer timer;
 
 		void Start(){
 			audio = this.GetComponent<AudioSource> ();
 			user = this.GetComponent<DeerUserController> ();
 			deer = this.GetComponent<FirstPersonDeer> ();
+			timer = FindObjectOfType<Timer> ();
 		}
 
 		void Update(){
@@ -38,7 +40,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			if (GameObject.Find ("NetworkManager").GetComponent<NetworkManagerOverrides> ().deer == 0) {
 				EndScene stop = FindObjectOfType<EndScene>(); 
 				Timer winner = FindObjectOfType<Timer> ();
-				winner.winText.text = "The Hunter Wins";
+				winner.winner = "The Hunter Wins";
 				stop.EndGame();
 			}
 
@@ -123,11 +125,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 		*/
 		public void FallDamage(float airDist){
-			if (airDist < 40) {
-				health -= airDist * 1.5f;
-			} else {
-				health = 0;
-			}
+			if(timer.timeLeft <= 295)
+				if (airDist < 40) {
+					health -= airDist * 1.5f;
+				} else {
+					health = 0;
+				}
 		}
 	}
 }
