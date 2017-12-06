@@ -26,6 +26,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			if (col.gameObject.name == "DeerBody") {
 				if (timeHeld != 0) {
 					GameObject.Find ("Hunter(Clone)").GetComponent<BowScript> ().deerHit = true;
+					//col.gameObject.transform.root.GetComponent<Health>().hp -= (timeHeld * GameObject.Find ("Hunter(Clone)").GetComponent<BowScript> ().power) / (9 - timeHeld);
+					//col.gameObject.GetComponent<HealthDeer>().damageCooldown = Time.time + 1f;
+					//print (col.gameObject.GetComponent<HealthDeer> ().health);
 				}
 			} else {
 				this.GetComponent<Rigidbody> ().isKinematic = true;

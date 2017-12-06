@@ -3489,7 +3489,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1033663765819426}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!81 &81646503765194640
 AudioListener:
   m_ObjectHideFlags: 1
@@ -3766,7 +3766,7 @@ MonoBehaviour:
     type: 2}
   prefabFakeProjectile: {fileID: 1887071988086966, guid: 71801804683c9924092f3f20383308b2,
     type: 2}
-  power: 15
+  power: 17
   coolDown: 0.5
   crosshairNormal: {fileID: 2800000, guid: 5cf1e120ce355a94190a4766e4e27629, type: 3}
   crosshairHit: {fileID: 2800000, guid: 277f6eabb99a1634f8990b9448553c01, type: 3}
