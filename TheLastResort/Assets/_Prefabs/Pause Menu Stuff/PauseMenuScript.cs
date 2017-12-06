@@ -29,6 +29,7 @@ public class PauseMenuScript : MonoBehaviour {
 		EndScene stop = FindObjectOfType<EndScene> ();
 		stop.EndGame();
         SceneManager.LoadScene("Lobby");
+        Cursor.visible = true;
     }
 
     public void ExitGame()
