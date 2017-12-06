@@ -3371,8 +3371,8 @@ MonoBehaviour:
   matchMaker: {fileID: 0}
   m_ShowLobbyGUI: 1
   m_MaxPlayers: 4
-  m_MaxPlayersPerConnection: 1
-  m_MinPlayers: 2
+  m_MaxPlayersPerConnection: 4
+  m_MinPlayers: 1
   m_LobbyPlayerPrefab: {fileID: 114359774795084950, guid: b70c56c7ceb857c4f9c73d7f4918b92f,
     type: 2}
   m_GamePlayerPrefab: {fileID: 1455526463812822, guid: 294dbae3d8bbf0f43beeab129ef841a5,
@@ -3385,7 +3385,7 @@ MonoBehaviour:
   m_PlayerPrefab2: {fileID: 1890426589039762, guid: 472c2101e9170954c8d84c7a32e9a81d,
     type: 2}
   isHunter: 0
-  deer: 0
+  deer: 1
 --- !u!4 &535663946
 Transform:
   m_ObjectHideFlags: 0

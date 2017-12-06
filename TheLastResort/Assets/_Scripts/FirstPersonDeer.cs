@@ -66,6 +66,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 		}
 
+		void OnCollisionStay(Collision col){
+			if(col.gameObject.name == "Terrain_PlayingField"){
+				//print (airDist);
+				airDist = gameObject.transform.position.y;
+			}
+		}
+
 		public void Move(Vector3 move, bool jump, bool charge)
 		{
 			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)

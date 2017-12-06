@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
 	public class HealthHunter : MonoBehaviour {
-		public float health = 100;
+		public float health;
 		public AudioClip ac_land;
 		public AudioClip ac_water;
 		public AudioClip ac_splash;
@@ -28,6 +28,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		void Update(){
 			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
 				return;
+
+			health = this.gameObject.transform.root.GetComponent<Health> ().hp;
 
 			//if (user.m_Move == new Vector3 (0, 0, 0) && audio.isPlaying)
 			//	audio.Stop ();
@@ -55,9 +57,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			if (col.gameObject.name == "DeerBody") {
 				if (canHit) {
 					if (col.gameObject.GetComponent<DeerUserController> ().charge) {
-						health -= 15;
+						this.gameObject.transform.root.GetComponent<Health> ().hp -= 15;
 					} else {
-						health -= 7.5f;
+						this.gameObject.transform.root.GetComponent<Health> ().hp -= 7.5f;
 					}
 					hitAgain = Time.time + 5;
 					canHit = false;
@@ -132,12 +134,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 		*/
 		public void FallDamage(float airDist){
-			if(timer.timeLeft <= 295)
-				if (airDist < 40) {
-					health -= airDist * 1.5f;
-				} else {
-					health = 0;
-				}
+			if (airDist < 40) {
+				this.gameObject.transform.root.GetComponent<Health> ().hp -= airDist * 1.5f;
+			} else {
+				this.gameObject.transform.root.GetComponent<Health> ().hp = 0;
+			}
 		}
 	}
 }

@@ -789,6 +789,7 @@ GameObject:
   - component: {fileID: 81164241587875160}
   - component: {fileID: 114184498639039552}
   - component: {fileID: 82331269629867340}
+  - component: {fileID: 114520365451921582}
   m_Layer: 0
   m_Name: Hunter
   m_TagString: Untagged
@@ -3447,7 +3448,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!54 &54237077637314138
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -3892,6 +3893,18 @@ MonoBehaviour:
   - {x: 1, y: 0, z: 0}
   newUV: []
   newTriangles: 000000000100000002000000020000000300000000000000000000000300000002000000020000000100000000000000
+--- !u!114 &114520365451921582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1455526463812822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8557f669b31f135478c33538fff27b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
 --- !u!114 &114611155663370788
 MonoBehaviour:
   m_ObjectHideFlags: 1

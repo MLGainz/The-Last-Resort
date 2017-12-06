@@ -70,6 +70,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 		}
 
+		void OnCollisionStay(Collision col){
+			if(col.gameObject.name == "Terrain_PlayingField"){
+				//print (airDist);
+				airDist = gameObject.transform.position.y;
+			}
+		}
+
 		public void Move(Vector3 move, bool crouch, bool sprint, bool jump)
 		{
 			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity> ().isLocalPlayer)
@@ -88,9 +95,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			//m_SideAmount = move.x;
 
 			if (m_IsGrounded) {
-				this.gameObject.transform.position = this.gameObject.transform.position + rot * new Vector3 (move.x / 1.25f, 0, move.z / 1.25f);
+				this.gameObject.transform.position = this.gameObject.transform.position + rot * new Vector3 (move.x / 1.5f, 0, move.z / 1.5f);
 			} else {
-				this.gameObject.transform.position = this.gameObject.transform.position + rot * new Vector3 (move.x / (1.25f * airTime), 0, move.z / (1.25f * airTime));
+				this.gameObject.transform.position = this.gameObject.transform.position + rot * new Vector3 (move.x / (1.5f * airTime), 0, move.z / (1.5f * airTime));
 			}
 			
 			//ApplyExtraTurnRotation();

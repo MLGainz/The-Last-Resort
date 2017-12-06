@@ -6,8 +6,8 @@ using UnityEngine.Networking;
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
 	public class HealthDeer : MonoBehaviour {
-		public float health = 100;
-		private float damageCooldown = 0;
+		public float health;
+		public float damageCooldown = 0;
 
 		public AudioClip ac_land;
 		public AudioClip ac_water;
@@ -27,6 +27,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		void Update(){
 			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
 				return;
+
+			health = gameObject.transform.root.GetComponent<Health> ().hp;
 
 			//if (user.m_Move == new Vector3 (0, 0, 0) && audio.isPlaying)
 			//	audio.Stop ();
@@ -48,6 +50,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			//	audio.Stop ();
 		}
 
+
 		void OnCollisionEnter(Collision col){
 			//if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
 			//	return;
@@ -55,7 +58,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			if (Time.time > damageCooldown) {
 				if (col.gameObject.name == "Arrow(Clone)") {
 					print ((col.gameObject.GetComponent<Arrow> ().timeHeld));// * GameObject.Find ("Hunter(Clone)").GetComponent<BowScript> ().power) / (9 - col.gameObject.GetComponent<Arrow> ().timeHeld));
-					health -= (col.gameObject.GetComponent<Arrow> ().timeHeld * GameObject.Find ("Hunter(Clone)").GetComponent<BowScript> ().power) / (9 - col.gameObject.GetComponent<Arrow> ().timeHeld);
+					this.gameObject.transform.root.GetComponent<Health> ().hp -= (col.gameObject.GetComponent<Arrow> ().timeHeld * GameObject.Find ("Hunter(Clone)").GetComponent<BowScript> ().power) / (9 - col.gameObject.GetComponent<Arrow> ().timeHeld);
 					print (health);
 					damageCooldown = Time.time + 1f;
 				}
@@ -125,12 +128,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 		*/
 		public void FallDamage(float airDist){
-			if(timer.timeLeft <= 295)
-				if (airDist < 40) {
-					health -= airDist * 1.5f;
-				} else {
-					health = 0;
-				}
+			if (airDist < 40) {
+				this.gameObject.transform.root.GetComponent<Health> ().hp -= airDist * 1.5f;
+			} else {
+				this.gameObject.transform.root.GetComponent<Health> ().hp = 0;
+			}
 		}
 	}
 }
