@@ -43,14 +43,15 @@ public class HunterCameraController : MonoBehaviour {
         EButton.enabled = false;
         PCanvas.enabled = false;
 
-       
+		if (gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
+			this.GetComponent<AudioListener> ().enabled = true;
     }
 
     void LateUpdate()
     {	
 		if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity> ().isLocalPlayer)
 			return;
-		
+
 		if (Time.time >= nextPause)
 			canPause = true;
 		

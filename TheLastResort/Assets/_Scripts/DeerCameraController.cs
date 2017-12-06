@@ -33,6 +33,9 @@ public class DeerCameraController : MonoBehaviour {
         MainButton.enabled = false;
         EButton.enabled = false;
         PCanvas.enabled = false;
+
+		if (gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
+			this.GetComponent<AudioListener> ().enabled = true;
     }
 
     void LateUpdate()

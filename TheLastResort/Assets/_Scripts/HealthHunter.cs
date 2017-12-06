@@ -26,13 +26,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 
 		void Update(){
+			if (!hunter.m_IsGrounded && audio.isPlaying)
+				audio.Stop ();
+
 			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
 				return;
 
 			health = this.gameObject.transform.root.GetComponent<Health> ().hp;
 
-			//if (user.m_Move == new Vector3 (0, 0, 0) && audio.isPlaying)
-			//	audio.Stop ();
+			if (user.m_Move == new Vector3 (0, 0, 0) && audio.isPlaying)
+				audio.Stop ();
 
 			if (Time.time > hitAgain)
 				canHit = true;
@@ -43,9 +46,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				winner.winner = "The Deer Win";
 				stop.EndGame();
 			}
-
-			//if (!hunter.m_IsGrounded && audio.isPlaying)
-			//	audio.Stop ();
 		}
 
 		void OnCollisionEnter(Collision col){
@@ -66,11 +66,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				}
 			}
 		}
-		/*
+
 		void OnCollisionStay(Collision col){
-			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
-				return;
-			
 			if (col.gameObject.name == "Terrain_PlayingField") {
 				if (audio.isPlaying)
 					return;
@@ -86,9 +83,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 
 		void OnTriggerEnter(Collider col){
-			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
-				return;
-			
 			if (!hunter.m_IsGrounded && col.gameObject.name == "Water_River" || col.gameObject.name == "Water_Waterfall") {
 				if (audio.isPlaying)
 					audio.Stop ();
@@ -105,9 +99,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 
 		void OnTriggerStay(Collider col){
-			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
-				return;
-			
 			if (col.gameObject.name == "Water_River" || col.gameObject.name == "Water_Waterfall") {
 				//inWater = true;
 
@@ -124,15 +115,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 
 		void OnTriggerExit(Collider col){
-			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
-				return;
-			
 			if (col.gameObject.name == "Water_River" || col.gameObject.name == "Water_Waterfall") {
 				audio.Stop ();
 				audio.clip = ac_land;
 			}
 		}
-		*/
+
 		public void FallDamage(float airDist){
 			if (airDist < 40) {
 				this.gameObject.transform.root.GetComponent<Health> ().hp -= airDist * 1.5f;

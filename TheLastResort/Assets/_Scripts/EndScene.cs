@@ -31,6 +31,7 @@ public class EndScene : MonoBehaviour {
 				//Hunter.SetActive(false);
 
 				Cursor.lockState = CursorLockMode.None;
+				Cursor.visible = true;
 
 				endGame = 0;
 				lobby.deer = 0;
