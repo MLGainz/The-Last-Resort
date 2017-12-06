@@ -136,7 +136,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Go to main menu
+  m_Text: Return to lobby
 --- !u!114 &114157961823239134
 MonoBehaviour:
   m_ObjectHideFlags: 1
