@@ -52,7 +52,17 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 
 		void OnCollisionEnter(Collision col){
-			
+			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
+				return;
+
+			if (Time.time > damageCooldown) {
+				if (col.gameObject.name == "Arrow(Clone)") {
+					print ((col.gameObject.GetComponent<Arrow> ().timeHeld));// * GameObject.Find ("Hunter(Clone)").GetComponent<BowScript> ().power) / (9 - col.gameObject.GetComponent<Arrow> ().timeHeld));
+					this.gameObject.transform.root.GetComponent<Health> ().hp = health - (col.gameObject.GetComponent<Arrow> ().timeHeld * GameObject.Find ("Hunter(Clone)").GetComponent<BowScript> ().power) / (9 - col.gameObject.GetComponent<Arrow> ().timeHeld);
+					print (health);
+					damageCooldown = Time.time + 1f;
+				}
+			}
 		}
 
 		void OnCollisionStay(Collision col){
@@ -78,18 +88,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				audio.clip = ac_water;
 				audio.pitch = 1.5f;
 				audio.Play ();
-			}
-
-			if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
-				return;
-
-			if (Time.time > damageCooldown) {
-				if (col.gameObject.name == "Arrow(Clone)") {
-					print ((col.gameObject.GetComponent<Arrow> ().timeHeld));// * GameObject.Find ("Hunter(Clone)").GetComponent<BowScript> ().power) / (9 - col.gameObject.GetComponent<Arrow> ().timeHeld));
-					this.gameObject.transform.root.GetComponent<Health> ().hp = health - (col.gameObject.GetComponent<Arrow> ().timeHeld * GameObject.Find ("Hunter(Clone)").GetComponent<BowScript> ().power) / (9 - col.gameObject.GetComponent<Arrow> ().timeHeld);
-					print (health);
-					damageCooldown = Time.time + 1f;
-				}
 			}
 		}
 
