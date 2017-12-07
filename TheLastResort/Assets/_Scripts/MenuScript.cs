@@ -11,6 +11,7 @@ public class MenuScript : MonoBehaviour {
     public Canvas quitMenu;
     public Button exitText;
     public Button startOnlineText;
+	//public Text controls;
     
     
 
@@ -20,7 +21,9 @@ public class MenuScript : MonoBehaviour {
         quitMenu = quitMenu.GetComponent<Canvas>();
         startOnlineText = startOnlineText.GetComponent<Button>();
         exitText = exitText.GetComponent<Button>();
+		//controls = controls.GetComponent<Text> ();
         quitMenu.enabled = false;
+		//controls.enabled = false;
     }
 	
    
@@ -33,7 +36,13 @@ public class MenuScript : MonoBehaviour {
         
     }
 
-    
+	//public void ControlPress(){
+	///	if (controls.enabled = true) {
+	//		controls.enabled = false;
+	//	} else {
+	//		controls.enabled = true;
+	//	}
+	//}
 
     public void ExitPress()
     {
