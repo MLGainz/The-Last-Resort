@@ -30,11 +30,11 @@ public class NetworkManagerOverrides : NetworkLobbyManager {
 		OnLobbyClientSceneChanged(conn);
 	}
 
-
 	void CallOnClientEnterLobby(){
 		deer = 1;
 		isHunter = false;
-
+		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
 		OnLobbyClientEnter ();
 		foreach (var player in lobbySlots) {
 			if (player == null)

@@ -8,21 +8,22 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 	public class Arrow : NetworkBehaviour {
 		[SyncVar] public float timeHeld;
 		private AudioSource audio;
+		private bool called = false;
 
 		void Start(){
 			audio = this.GetComponent<AudioSource> ();
 		}
 
 		void LateUpdate(){
-			if (this.GetComponent<Rigidbody> ().velocity == new Vector3 (0, 0, 0)) {
-				timeHeld = 0;
+			if (this.GetComponent<Rigidbody> ().velocity == new Vector3 (0, 0, 0) && !called) {
+				StartCoroutine(Deactivate ());
 			}
 		}
 
 		void OnCollisionEnter(Collision col){
 			if(timeHeld > 0)
 				audio.Play ();
-			
+
 			if (col.gameObject.name == "DeerBody") {
 				if (timeHeld != 0) {
 					GameObject.Find ("Hunter(Clone)").GetComponent<BowScript> ().deerHit = true;
@@ -33,6 +34,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			} else {
 				this.GetComponent<Rigidbody> ().isKinematic = true;
 			}
+		}
+
+		IEnumerator Deactivate(){
+			called = true;
+			yield return new WaitForSeconds(3);
+			timeHeld = 0;
+			//print ("Deactivated");
 		}
 	}
 }
